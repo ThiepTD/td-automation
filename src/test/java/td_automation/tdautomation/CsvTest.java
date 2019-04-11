@@ -33,9 +33,9 @@ public class CsvTest{
     @Test
     public void csvDelimiterTest(){
         LOGGER.info("------------- Start running csvDelimiterTest -------------");
-        srcCsv = Constant.RESOURCE_PATH + "csv/1.csv";
-        desCsv = Constant.RESOURCE_PATH + "csv/2.csv";
-        String myDelimiter = "^";
+        srcCsv = Constant.RESOURCE_PATH + "csv/Result.csv";
+        desCsv = Constant.RESOURCE_PATH + "csv/Result1.csv";
+        String myDelimiter = "\\^";
         boolean result = CsvUtil.compareCsv(srcCsv, desCsv, myDelimiter);
         assertTrue(result);
     }
