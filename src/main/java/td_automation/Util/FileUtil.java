@@ -31,13 +31,20 @@ public class FileUtil {
         String st;
         while ((st = br.readLine()) != null){
             if (!st.isEmpty()){
-                st = st.replaceAll("\"", "");
-                String beginString = st.substring(0, 4);
+                //st = st.replaceAll("\"", "");
+                //lines.add(st);
+                String beginString = "";
+                if (!st.startsWith("\"")) {
+                    beginString = st.substring(0, 4);
+                } else {
+                    beginString = st.substring(1, 5);
+                }
+
                 try{
                     int value = Integer.parseInt(beginString);
                     lines.add(st);
                 } catch (Exception e){
-                    if (lines.size() == 0)
+                    if (lines.size() == 0 || beginString.isEmpty())
                         lines.add(st);
                     else
                         lines.set(lines.size() - 1, lines.get(lines.size() - 1) + st);
@@ -57,7 +64,7 @@ public class FileUtil {
                 if (file.getName().contains(fileName)){
                     String currentFile = file.getName();
                     LOGGER.info("Read " + currentFile);
-                    //fileData = Util.replaceAll(readLine(file), "\"", "");
+                    fileData = Util.replaceAll(readLine(file), "\"", "");
                     fileData = readLine(file);
 
                     fileData.add(0, currentFile);

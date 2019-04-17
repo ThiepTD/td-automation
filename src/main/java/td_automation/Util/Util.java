@@ -7,7 +7,7 @@ public class Util {
 
 	static Logger LOGGER = LogManager.getLogger(Util.class.getName());
 
-	public static ArrayList<String> replaceAll(ArrayList<String> data, String oldString, String newString) throws Exception{
+	public static ArrayList<String> replaceAll(ArrayList<String> data, String oldString, String newString) {
 		ArrayList<String> result = new ArrayList<String>();
 		for(int i = 0; i < data.size(); i ++){
 			result.add(data.get(i).replaceAll(oldString, newString));

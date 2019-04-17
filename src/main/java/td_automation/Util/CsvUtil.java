@@ -146,9 +146,7 @@ public class CsvUtil {
                 String tmpDes = desRow.get(key);
                 String tmpSrc = srcData.get(key);
 
-                //if (!tmpDes.equalsIgnoreCase(tmpSrc)) {
-                // Skip double quotes
-                if (!tmpDes.equalsIgnoreCase(tmpSrc.replace("\"", ""))) {
+                if (!tmpDes.equalsIgnoreCase(tmpSrc)) {
                     currentOfDiff++;
                     // Un comment if you want to have better performance but cannot figure out the most likely record
                     //break;
@@ -262,11 +260,11 @@ public class CsvUtil {
     }
 
     public static boolean compareCsvList(String srcCsv,String folder,String fileName, String myDelimiter){
-        ArrayList<HashMap<String, String>> srcData = fileToMaps(srcCsv, myDelimiter);
+        ArrayList<HashMap<String, String>> srcData = fileToMaps(srcCsv);
         ArrayList<ArrayList<HashMap<String, String>>> desDataList = new ArrayList<ArrayList<HashMap<String, String>>>();
         ArrayList<ArrayList<String>> csvDataList = folderToMaps(folder, fileName, SITE_USER_DATA);
         for (int i = 0; i < csvDataList.size(); i++){
-            ArrayList<HashMap<String, String>> tmpDesData = arrayDataToMaps(csvDataList.get(i), myDelimiter);
+            ArrayList<HashMap<String, String>> tmpDesData = arrayDataToMaps(Util.replaceAll(csvDataList.get(i), "\"", ""), myDelimiter);
             desDataList.add(tmpDesData);
         }
         return compareCsvList(srcData, desDataList);
@@ -289,15 +287,40 @@ public class CsvUtil {
 
         for (int i = startPoint; i < fileData.size(); i ++){
             String [] values = fileData.get(i).split(delimiter);
+            String [] usableValues = new String[values.length];
+            int index = 0;
+            for (int m = 0; m < values.length; m++){
+                if (values[m].startsWith("\"")){
+                    usableValues[index] = values[m];
+                    if (values[m].endsWith("\"")) {
+                        index ++;
+                        continue;
+                    }
+
+                    int l;
+                    for (l = m + 1; l < values.length; l ++){
+                        usableValues[index] += delimiter + values[l];
+                        if (values[l].endsWith("\"")) {
+                            //usableValues[m] = usableValues[m].replaceAll("\"", "");
+                            break;
+                        }
+                    }
+                    m = l;
+                } else {
+                    usableValues[index] = values[m];
+                }
+                index ++;
+            }
+
             HashMap<String, String> tmpMap = new HashMap<String, String>();
 
             for (int j = 0; j < keys.length; j ++)
                 try{
-                    tmpMap.put(keys[j], values[j]);
+                    tmpMap.put(keys[j], usableValues[j].replaceAll("\"", ""));
                 } catch (Exception e){
                     tmpMap.put(keys[j], "");
                 }
-                csvData.add(tmpMap);
+            csvData.add(tmpMap);
         }
         return csvData;
     }
