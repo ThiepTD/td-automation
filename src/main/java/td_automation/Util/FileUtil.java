@@ -30,8 +30,19 @@ public class FileUtil {
 
         String st;
         while ((st = br.readLine()) != null){
-            if (!st.isEmpty())
-                lines.add(st);
+            if (!st.isEmpty()){
+                st = st.replaceAll("\"", "");
+                String beginString = st.substring(0, 4);
+                try{
+                    int value = Integer.parseInt(beginString);
+                    lines.add(st);
+                } catch (Exception e){
+                    if (lines.size() == 0)
+                        lines.add(st);
+                    else
+                        lines.set(lines.size() - 1, lines.get(lines.size() - 1) + st);
+                }
+            }
         }
         return lines;
     }
@@ -44,8 +55,12 @@ public class FileUtil {
             File [] files = new File(folder).listFiles();
             for(File file: files){
                 if (file.getName().contains(fileName)){
-                    LOGGER.info("Read " + file.getName());
-                    fileData = Util.replaceAll(readLine(file), "\"", "");
+                    String currentFile = file.getName();
+                    LOGGER.info("Read " + currentFile);
+                    //fileData = Util.replaceAll(readLine(file), "\"", "");
+                    fileData = readLine(file);
+
+                    fileData.add(0, currentFile);
                     result.add(fileData);
                 }
             }

@@ -11,7 +11,10 @@ public class CsvUtil {
 
     public static Logger LOGGER = LogManager.getLogger(Util.class.getName());
     public static String delimiter = ",";
-    public static String S3_HEADERS = "timestamp^day^krux_user_id^ip_address^browser^device^operating_system^url^site_data^geo_data_display";
+
+    //public static String S3_HEADERS = "timestamp^day^krux_user_id^ip_address^browser^device^operating_system^url^site_data^geo_data_display";
+    public static String S3_HEADERS = "timestamp^day^configuration_id^krux_user_id^ip_address^browser^device_type^operating_system^kxbrand^advertiser_id^campaign_id^placement_id^site_id^creative_id^ad_id^is_click^geo_data_display";
+    public static String SITE_USER_DATA = "timestamp^day^krux_user_id^ip_address^browser^device^operating_system^url^site_data^geo_data_display";
 
     public static boolean compareCsv(ArrayList<HashMap<String, String>> srcData,ArrayList<HashMap<String, String>> desData){
 
@@ -132,40 +135,52 @@ public class CsvUtil {
 
         int finalDiff = numOfColumn;
         int foundIndex = 0;
+        int mostLikelyIndex = 0;
 
-        for (int j = 0; j < desData.size(); j++) {
+        for (int j = 1; j < desData.size(); j++) {
             HashMap<String, String> desRow = desData.get(j);
+            if (desRow == null) continue;
             int currentOfDiff = 0;
 
             for (String key : srcData.keySet()) {
                 String tmpDes = desRow.get(key);
                 String tmpSrc = srcData.get(key);
 
-                if (!tmpDes.equalsIgnoreCase(tmpSrc)) {
+                //if (!tmpDes.equalsIgnoreCase(tmpSrc)) {
+                // Skip double quotes
+                if (!tmpDes.equalsIgnoreCase(tmpSrc.replace("\"", ""))) {
                     currentOfDiff++;
                     // Un comment if you want to have better performance but cannot figure out the most likely record
                     //break;
                 }
+            }
 
+            if (currentOfDiff == 0) {
+                foundIndex = j;
+                finalDiff = 0;
+                break;
             }
 
             if (currentOfDiff < finalDiff) {
                 finalDiff = currentOfDiff;
                 diffMap = desRow;
+                mostLikelyIndex = j;
             }
-
-            if (currentOfDiff == 0) foundIndex = j;
         }
 
         if (finalDiff == 0) {
 
             //Found 1 match so remove that item out of desData so the next search won't touch it
-            desData.remove(foundIndex);
+            //desData.remove(foundIndex);
+            desData.set(foundIndex, null);
+            diffMap.put("file:index", desData.get(0).get("fileName") + ":" + String.valueOf(foundIndex));
         } else {
             //LOGGER.info("No match !");
             //LOGGER.info(String.format("The current record %s", srcData.toString()));
             //LOGGER.info(String.format("Most likely record %s", diffMap.toString()));
+            diffMap.put("file:index", desData.get(0).get("fileName") + ":" + String.valueOf(mostLikelyIndex));
         }
+
         diffMap.put("numOfDiff", String.valueOf(finalDiff));
         return diffMap;
     }
@@ -181,6 +196,7 @@ public class CsvUtil {
         for(int i = 0; i < srcData.size(); i ++){
             HashMap<String, String> finalDiff = new HashMap<String, String>();
             //LOGGER.info(String.format("----------> Compare with data block %d !", i));
+            //LOGGER.info(String.format("Search record %d ...", i));
             HashMap<String, String> currentDiff;
             HashMap<String, String> srcRow = srcData.get(i);
             for(int j = 0; j < desDataList.size(); j ++) {
@@ -199,12 +215,18 @@ public class CsvUtil {
 
             if(Integer.parseInt(finalDiff.get("numOfDiff")) == 0){
                 match ++;
-                LOGGER.info(String.format("Found record %d !", i));
+                //LOGGER.info(String.format("Found record %d !", i));
             }else{
                 result = false;
                 finalDiff.remove("numOfDiff");
-                LOGGER.info(String.format("The current record %d %s", i, srcRow.toString()));
+                String [] fileIndex = finalDiff.get("file:index").split(":");
+                String mostLikelyIndex = fileIndex[1];
+                String fileName = fileIndex[0];
+                finalDiff.remove("file:index");
+
+                LOGGER.info(String.format("The current record %s", srcRow.toString()));
                 LOGGER.info(String.format("Most likely record %s", finalDiff.toString()));
+                LOGGER.info(String.format("Most likely record in file %s with row %s", fileName, mostLikelyIndex));
                 LOGGER.info(String.format("Record %d not found !", i));
             }
         }
@@ -231,7 +253,7 @@ public class CsvUtil {
     public static boolean compareCsvList(String srcCsv,String folder,String fileName){
         ArrayList<HashMap<String, String>> srcData = fileToMaps(srcCsv);
         ArrayList<ArrayList<HashMap<String, String>>> desDataList = new ArrayList<ArrayList<HashMap<String, String>>>();
-        ArrayList<ArrayList<String>> csvDataList = folderToMaps(folder, fileName, S3_HEADERS);
+        ArrayList<ArrayList<String>> csvDataList = folderToMaps(folder, fileName, SITE_USER_DATA);
         for (int i = 0; i < csvDataList.size(); i++){
             ArrayList<HashMap<String, String>> tmpDesData = arrayDataToMaps(csvDataList.get(i));
             desDataList.add(tmpDesData);
@@ -242,7 +264,7 @@ public class CsvUtil {
     public static boolean compareCsvList(String srcCsv,String folder,String fileName, String myDelimiter){
         ArrayList<HashMap<String, String>> srcData = fileToMaps(srcCsv, myDelimiter);
         ArrayList<ArrayList<HashMap<String, String>>> desDataList = new ArrayList<ArrayList<HashMap<String, String>>>();
-        ArrayList<ArrayList<String>> csvDataList = folderToMaps(folder, fileName, S3_HEADERS);
+        ArrayList<ArrayList<String>> csvDataList = folderToMaps(folder, fileName, SITE_USER_DATA);
         for (int i = 0; i < csvDataList.size(); i++){
             ArrayList<HashMap<String, String>> tmpDesData = arrayDataToMaps(csvDataList.get(i), myDelimiter);
             desDataList.add(tmpDesData);
@@ -253,8 +275,19 @@ public class CsvUtil {
     public static ArrayList<HashMap<String, String>> arrayDataToMaps(ArrayList<String> fileData){
         ArrayList<HashMap<String, String>> csvData = new ArrayList<HashMap<String, String>>();
         String [] keys = fileData.get(0).split(delimiter);
+        int startPoint;
+        String fileName = fileData.get(1);
 
-        for (int i = 1; i < fileData.size(); i ++){
+        if (fileName.contains(delimiter.replace("\\",""))){
+            startPoint = 1;
+        } else {
+            startPoint = 2;
+            HashMap<String, String> tmpMap = new HashMap<String, String>();
+            tmpMap.put("fileName", fileName);
+            csvData.add(tmpMap);
+        }
+
+        for (int i = startPoint; i < fileData.size(); i ++){
             String [] values = fileData.get(i).split(delimiter);
             HashMap<String, String> tmpMap = new HashMap<String, String>();
 
