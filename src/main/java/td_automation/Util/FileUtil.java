@@ -139,7 +139,7 @@ public class FileUtil {
         int match = 0;
         int numOfLine = 0;
         for (int j = 0; j < fileDataList.size(); j ++)
-            numOfLine += fileDataList.get(j).size();
+            numOfLine += fileDataList.get(j).size() - 1;
         try {
             for (int i = 1; i < lines.size(); i ++) {
                 LOGGER.info(String.format("Search line %d ...", i));
