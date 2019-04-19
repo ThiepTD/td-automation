@@ -142,7 +142,7 @@ public class FileUtil {
             numOfLine += fileDataList.get(j).size();
         try {
             for (int i = 1; i < lines.size(); i ++) {
-                //LOGGER.info(String.format("Search line %d ...", i));
+                LOGGER.info(String.format("Search line %d ...", i));
                 if (!seachRecordInFolder(lines.get(i), fileDataList)){
                     result = false;
                     LOGGER.info(String.format("------------------>Line %d not found !", i));
