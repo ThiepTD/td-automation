@@ -146,14 +146,14 @@ public class FileUtil {
                 if (!seachRecordInFolder(lines.get(i), fileDataList)){
                     result = false;
                     LOGGER.info(String.format("------------------>Line %d not found !", i));
-                }
-                match ++;
+                } else
+                    match ++;
             }
         } catch (Exception e){
             LOGGER.error(e.toString());
         }
-        LOGGER.info(String.format("Total source lines %d ...", lines.size() - 1));
-        LOGGER.info(String.format("Total destination lines %d ...", numOfLine));
+        LOGGER.info(String.format("Total td lines %d ...", lines.size() - 1));
+        LOGGER.info(String.format("Total Krux lines %d ...", numOfLine));
         LOGGER.info(String.format("Number of match(es) found %d ...", match));
         LOGGER.info(String.format("Final result %s ...", String.valueOf(result)));
         return result;
