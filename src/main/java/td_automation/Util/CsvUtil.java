@@ -14,7 +14,8 @@ public class CsvUtil {
 
     //public static String S3_HEADERS = "timestamp^day^krux_user_id^ip_address^browser^device^operating_system^url^site_data^geo_data_display";
     public static String S3_HEADERS = "timestamp^day^configuration_id^krux_user_id^ip_address^browser^device_type^operating_system^kxbrand^advertiser_id^campaign_id^placement_id^site_id^creative_id^ad_id^is_click^geo_data_display";
-    public static String SITE_USER_DATA = "timestamp^day^krux_user_id^ip_address^browser^device^operating_system^url^site_data^geo_data_display";
+    //public static String SITE_USER_DATA = "timestamp^day^krux_user_id^ip_address^browser^device^operating_system^url^site_data^geo_data_display";
+    public static String SITE_USER_DATA = "timestamp^day^configuration_id^krux_user_id^ip_address^browser^device_type^operating_system^kxbrand^advertiser_id^campaign_id^placement_id^site_id^creative_id^ad_id^is_click^geo_data_display";
 
     public static boolean compareCsv(ArrayList<HashMap<String, String>> srcData,ArrayList<HashMap<String, String>> desData){
 
@@ -149,7 +150,7 @@ public class CsvUtil {
                 if (!tmpDes.equalsIgnoreCase(tmpSrc)) {
                     currentOfDiff++;
                     // Un comment if you want to have better performance but cannot figure out the most likely record
-                    //break;
+                    break;
                 }
             }
 
@@ -224,7 +225,7 @@ public class CsvUtil {
 
                 LOGGER.info(String.format("The current record %s", srcRow.toString()));
                 LOGGER.info(String.format("Most likely record %s", finalDiff.toString()));
-                LOGGER.info(String.format("Most likely record in file %s with row %s", fileName, mostLikelyIndex));
+                LOGGER.info(String.format("Most likely record in file %s row %s", fileName, mostLikelyIndex));
                 LOGGER.info(String.format("Record %d not found !", i));
             }
         }

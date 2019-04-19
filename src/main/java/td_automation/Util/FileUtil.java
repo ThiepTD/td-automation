@@ -135,15 +135,28 @@ public class FileUtil {
     }
 
     public static boolean seachRecordsInFolder(ArrayList<String> lines, ArrayList<ArrayList<String>> fileDataList){
+        boolean result = true;
+        int match = 0;
+        int numOfLine = 0;
+        for (int j = 0; j < fileDataList.size(); j ++)
+            numOfLine += fileDataList.get(j).size();
         try {
-            for (int i = 0; i < lines.size(); i ++) {
-                if (!seachRecordInFolder(lines.get(i), fileDataList))
-                    return false;
+            for (int i = 1; i < lines.size(); i ++) {
+                //LOGGER.info(String.format("Search line %d ...", i));
+                if (!seachRecordInFolder(lines.get(i), fileDataList)){
+                    result = false;
+                    LOGGER.info(String.format("------------------>Line %d not found !", i));
+                }
+                match ++;
             }
         } catch (Exception e){
             LOGGER.error(e.toString());
         }
-        return true;
+        LOGGER.info(String.format("Total source lines %d ...", lines.size() - 1));
+        LOGGER.info(String.format("Total destination lines %d ...", numOfLine));
+        LOGGER.info(String.format("Number of match(es) found %d ...", match));
+        LOGGER.info(String.format("Final result %s ...", String.valueOf(result)));
+        return result;
     }
 
 }
