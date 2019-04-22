@@ -4,7 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.*;
-import java.util.ArrayList;
+import java.util.*;
 
 public class FileUtil {
 
@@ -140,6 +140,7 @@ public class FileUtil {
         int numOfLine = 0;
         for (int j = 0; j < fileDataList.size(); j ++)
             numOfLine += fileDataList.get(j).size() - 1;
+
         try {
             for (int i = 1; i < lines.size(); i ++) {
                 LOGGER.info(String.format("Search line %d ...", i));
@@ -159,4 +160,83 @@ public class FileUtil {
         return result;
     }
 
+    public static boolean seachMaps(ArrayList<String> lines, ArrayList<ArrayList<String>> fileDataList){
+        boolean result = true;
+        int match = 0;
+        int s3Lines, tdLines = 0;
+        HashMap<Object, Object> tdMap = arrayStringToMap(lines);
+        HashMap<Object, Object> s3Maps = arrayFolderToMap(fileDataList);
+        s3Lines = s3Maps.keySet().size();
+        tdLines = tdMap.keySet().size();
+
+        // Search by key
+        LOGGER.info("##########################################");
+        LOGGER.info("------------------------------------ Search by key ----------------------------------");
+        LOGGER.info("##########################################");
+        Object [] keys = s3Maps.keySet().toArray();
+        for (int i = 0; i < keys.length; i ++){
+            //LOGGER.info(String.format("Search line %s ...",s3Maps.get(keys[i])));
+
+            if (!tdMap.containsKey(keys[i])){
+                LOGGER.info(String.format("--------------------------> Line %s not found !", s3Maps.get(keys[i])));
+            }else {
+                match ++;
+                tdMap.remove(keys[i]);
+                s3Maps.remove(keys[i]);
+            }
+        }
+
+        // Search by value
+        LOGGER.info("##########################################");
+        LOGGER.info("------------------------------------ Search by value ----------------------------------");
+        LOGGER.info("##########################################");
+        Object [] values = s3Maps.values().toArray();
+        Object [] newKeys = s3Maps.keySet().toArray();
+        for (int i = 0; i < values.length; i ++){
+            //LOGGER.info(String.format("Search line %s ...", s3Maps.get(newKeys[i])));
+
+            if (!tdMap.containsValue(values[i])){
+                result = false;
+                LOGGER.info(String.format("--------------------------> Line %s not found !", s3Maps.get(newKeys[i])));
+            }else {
+                match ++;
+            }
+        }
+        LOGGER.info(String.format("Total td lines %d ...", tdLines));
+        LOGGER.info(String.format("Total Krux lines %d ...", s3Lines));
+        LOGGER.info(String.format("Number of match(es) found %d ...", match));
+        LOGGER.info(String.format("Final result %s ...", String.valueOf(result)));
+        return result;
+    }
+
+    public static HashMap<Object, Object> arrayStringToMap (ArrayList<String> strings){
+        HashMap<Object, Object> result = new HashMap<Object, Object>();
+        for (int i = 1; i < strings.size(); i ++){
+            String value = strings.get(i);
+
+            if (!result.containsKey(value)){
+                result.put(value, i);
+            } else {
+                result.put(i, value);
+            }
+        }
+        return result;
+    }
+
+    public static HashMap<Object, Object> arrayFolderToMap (ArrayList<ArrayList<String>> stringFolder){
+        HashMap<Object, Object> result = new HashMap<Object, Object>();
+        for (int i = 0; i < stringFolder.size(); i ++){
+            ArrayList<String> currentString = Util.replaceAll(Util.replaceAll(stringFolder.get(i), "\"", ""), "\\^", ",");
+
+            for (int j = 1; j < currentString.size(); j ++){
+                String value = currentString.get(j);
+                if (!result.containsKey(value)){
+                    result.put(value, currentString.get(0) + ":" + String.valueOf(j));
+                } else {
+                    result.put(currentString.get(0) + ":" + String.valueOf(j), value);
+                }
+            }
+        }
+        return result;
+    }
 }
