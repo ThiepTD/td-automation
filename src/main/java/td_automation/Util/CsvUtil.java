@@ -17,32 +17,32 @@ public class CsvUtil {
     //public static String SITE_USER_DATA = "timestamp^day^krux_user_id^ip_address^browser^device^operating_system^url^site_data^geo_data_display";
     public static String SITE_USER_DATA = "timestamp^day^configuration_id^krux_user_id^ip_address^browser^device_type^operating_system^kxbrand^advertiser_id^campaign_id^placement_id^site_id^creative_id^ad_id^is_click^geo_data_display";
 
-    public static boolean compareCsv(ArrayList<HashMap<String, String>> srcData,ArrayList<HashMap<String, String>> desData){
+    public static boolean compareCsv(ArrayList<HashMap<String, String>> srcData, ArrayList<HashMap<String, String>> desData) {
 
         boolean result = true;
         int match = 0;
-        if(compareQuantity(srcData, desData)){
+        if (compareQuantity(srcData, desData)) {
 
             int numOfColumn = srcData.get(0).size();
             HashMap<String, String> diffMap = new HashMap<String, String>();
 
-            for (int i = 0; i < srcData.size(); i ++){
+            for (int i = 0; i < srcData.size(); i++) {
                 HashMap<String, String> srcRow = srcData.get(i);
                 int finalDiff = numOfColumn;
                 int foundIndex = 0;
 
-                for (int j = 0; j < desData.size(); j++){
+                for (int j = 0; j < desData.size(); j++) {
                     HashMap<String, String> desRow = desData.get(j);
                     int currentOfDiff = 0;
 
-                    for (String key: srcRow.keySet()){
+                    for (String key : srcRow.keySet()) {
 
-                        if(!desRow.get(key).equals(srcRow.get(key))){
-                            currentOfDiff ++;
+                        if (!desRow.get(key).equals(srcRow.get(key))) {
+                            currentOfDiff++;
                         }
                     }
 
-                    if (currentOfDiff < finalDiff){
+                    if (currentOfDiff < finalDiff) {
                         finalDiff = currentOfDiff;
                         diffMap = desRow;
                     }
@@ -50,11 +50,11 @@ public class CsvUtil {
                     if (currentOfDiff == 0) foundIndex = j;
                 }
 
-                if (finalDiff == 0){
+                if (finalDiff == 0) {
 
                     //Found 1 match so remove that item out of desData so the next search won't touch it
                     desData.remove(foundIndex);
-                    match ++;
+                    match++;
                 } else {
                     result = false;
                     LOGGER.info("No match !");
@@ -71,25 +71,25 @@ public class CsvUtil {
         return result;
     }
 
-    public static boolean compareCsv(ArrayList<HashMap<String, String>> srcData,ArrayList<HashMap<String, String>> desData, boolean skipNumOfRecord){
-        if (skipNumOfRecord){
-            if(compareQuantity(srcData, desData)){
+    public static boolean compareCsv(ArrayList<HashMap<String, String>> srcData, ArrayList<HashMap<String, String>> desData, boolean skipNumOfRecord) {
+        if (skipNumOfRecord) {
+            if (compareQuantity(srcData, desData)) {
 
             }
-        } else{
+        } else {
 
         }
         return true;
     }
 
-    public static HashMap<String, String> compareAndRemoveMatches(ArrayList<HashMap<String, String>> srcData,ArrayList<HashMap<String, String>> desData){
+    public static HashMap<String, String> compareAndRemoveMatches(ArrayList<HashMap<String, String>> srcData, ArrayList<HashMap<String, String>> desData) {
         HashMap<String, String> mostLikelyRecord = new HashMap<String, String>();
-        if (theSameColumns(srcData,desData)){
+        if (theSameColumns(srcData, desData)) {
             int match = 0;
             int numOfColumn = srcData.get(0).size();
             HashMap<String, String> diffMap = new HashMap<String, String>();
 
-            for (int i = 0; i < srcData.size(); i ++) {
+            for (int i = 0; i < srcData.size(); i++) {
                 HashMap<String, String> srcRow = srcData.get(i);
                 int finalDiff = numOfColumn;
                 int foundIndex = 0;
@@ -130,7 +130,7 @@ public class CsvUtil {
         return mostLikelyRecord;
     }
 
-    public static HashMap<String, String> searchMap(HashMap<String, String> srcData,ArrayList<HashMap<String, String>> desData) {
+    public static HashMap<String, String> searchMap(HashMap<String, String> srcData, ArrayList<HashMap<String, String>> desData) {
         int numOfColumn = srcData.size();
         HashMap<String, String> diffMap = new HashMap<String, String>();
 
@@ -184,25 +184,25 @@ public class CsvUtil {
         return diffMap;
     }
 
-    public static boolean compareCsvList(ArrayList<HashMap<String, String>> srcData,ArrayList<ArrayList<HashMap<String, String>>> desDataList){
+    public static boolean compareCsvList(ArrayList<HashMap<String, String>> srcData, ArrayList<ArrayList<HashMap<String, String>>> desDataList) {
         boolean result = true;
         int match = 0;
         int totalDesRecord = 0;
 
-        for(int m = 0; m < desDataList.size(); m ++)
+        for (int m = 0; m < desDataList.size(); m++)
             totalDesRecord += desDataList.get(m).size();
 
-        for(int i = 0; i < srcData.size(); i ++){
+        for (int i = 0; i < srcData.size(); i++) {
             HashMap<String, String> finalDiff = new HashMap<String, String>();
             //LOGGER.info(String.format("----------> Compare with data block %d !", i));
             //LOGGER.info(String.format("Search record %d ...", i));
             HashMap<String, String> currentDiff;
             HashMap<String, String> srcRow = srcData.get(i);
-            for(int j = 0; j < desDataList.size(); j ++) {
+            for (int j = 0; j < desDataList.size(); j++) {
                 ArrayList<HashMap<String, String>> desData = desDataList.get(j);
                 currentDiff = searchMap(srcRow, desData);
 
-                if(Integer.parseInt(currentDiff.get("numOfDiff")) == 0) {
+                if (Integer.parseInt(currentDiff.get("numOfDiff")) == 0) {
                     //srcData.remove(i);
                     finalDiff.put("numOfDiff", "0");
                     break;
@@ -212,13 +212,13 @@ public class CsvUtil {
                 }
             }
 
-            if(Integer.parseInt(finalDiff.get("numOfDiff")) == 0){
-                match ++;
+            if (Integer.parseInt(finalDiff.get("numOfDiff")) == 0) {
+                match++;
                 //LOGGER.info(String.format("Found record %d !", i));
-            }else{
+            } else {
                 result = false;
                 finalDiff.remove("numOfDiff");
-                String [] fileIndex = finalDiff.get("file:index").split(":");
+                String[] fileIndex = finalDiff.get("file:index").split(":");
                 String mostLikelyIndex = fileIndex[1];
                 String fileName = fileIndex[0];
                 finalDiff.remove("file:index");
@@ -237,47 +237,47 @@ public class CsvUtil {
         return result;
     }
 
-    public static boolean compareCsv(String srcCsv,String desCsv){
+    public static boolean compareCsv(String srcCsv, String desCsv) {
         ArrayList<HashMap<String, String>> srcData = fileToMaps(srcCsv);
         ArrayList<HashMap<String, String>> desData = fileToMaps(desCsv);
         return compareCsv(srcData, desData);
     }
 
-    public static boolean compareCsv(String srcCsv,String desCsv, String myDelimiter){
+    public static boolean compareCsv(String srcCsv, String desCsv, String myDelimiter) {
         ArrayList<HashMap<String, String>> srcData = fileToMaps(srcCsv, myDelimiter);
         ArrayList<HashMap<String, String>> desData = fileToMaps(desCsv, myDelimiter);
         return compareCsv(srcData, desData);
     }
 
-    public static boolean compareCsvList(String srcCsv,String folder,String fileName){
+    public static boolean compareCsvList(String srcCsv, String folder, String fileName) {
         ArrayList<HashMap<String, String>> srcData = fileToMaps(srcCsv);
         ArrayList<ArrayList<HashMap<String, String>>> desDataList = new ArrayList<ArrayList<HashMap<String, String>>>();
         ArrayList<ArrayList<String>> csvDataList = folderToMaps(folder, fileName, SITE_USER_DATA);
-        for (int i = 0; i < csvDataList.size(); i++){
+        for (int i = 0; i < csvDataList.size(); i++) {
             ArrayList<HashMap<String, String>> tmpDesData = arrayDataToMaps(csvDataList.get(i));
             desDataList.add(tmpDesData);
         }
         return compareCsvList(srcData, desDataList);
     }
 
-    public static boolean compareCsvList(String srcCsv,String folder,String fileName, String myDelimiter){
+    public static boolean compareCsvList(String srcCsv, String folder, String fileName, String myDelimiter) {
         ArrayList<HashMap<String, String>> srcData = fileToMaps(srcCsv);
         ArrayList<ArrayList<HashMap<String, String>>> desDataList = new ArrayList<ArrayList<HashMap<String, String>>>();
         ArrayList<ArrayList<String>> csvDataList = folderToMaps(folder, fileName, SITE_USER_DATA);
-        for (int i = 0; i < csvDataList.size(); i++){
+        for (int i = 0; i < csvDataList.size(); i++) {
             ArrayList<HashMap<String, String>> tmpDesData = arrayDataToMaps(Util.replaceAll(csvDataList.get(i), "\"", ""), myDelimiter);
             desDataList.add(tmpDesData);
         }
         return compareCsvList(srcData, desDataList);
     }
 
-    public static ArrayList<HashMap<String, String>> arrayDataToMaps(ArrayList<String> fileData){
+    public static ArrayList<HashMap<String, String>> arrayDataToMaps(ArrayList<String> fileData) {
         ArrayList<HashMap<String, String>> csvData = new ArrayList<HashMap<String, String>>();
-        String [] keys = fileData.get(0).split(delimiter);
+        String[] keys = fileData.get(0).split(delimiter);
         int startPoint;
         String fileName = fileData.get(1);
 
-        if (fileName.contains(delimiter.replace("\\",""))){
+        if (fileName.contains(delimiter.replace("\\", ""))) {
             startPoint = 1;
         } else {
             startPoint = 2;
@@ -286,20 +286,20 @@ public class CsvUtil {
             csvData.add(tmpMap);
         }
 
-        for (int i = startPoint; i < fileData.size(); i ++){
-            String [] values = fileData.get(i).split(delimiter);
-            String [] usableValues = new String[values.length];
+        for (int i = startPoint; i < fileData.size(); i++) {
+            String[] values = fileData.get(i).split(delimiter);
+            String[] usableValues = new String[values.length];
             int index = 0;
-            for (int m = 0; m < values.length; m++){
-                if (values[m].startsWith("\"")){
+            for (int m = 0; m < values.length; m++) {
+                if (values[m].startsWith("\"")) {
                     usableValues[index] = values[m];
                     if (values[m].endsWith("\"")) {
-                        index ++;
+                        index++;
                         continue;
                     }
 
                     int l;
-                    for (l = m + 1; l < values.length; l ++){
+                    for (l = m + 1; l < values.length; l++) {
                         usableValues[index] += delimiter + values[l];
                         if (values[l].endsWith("\"")) {
                             //usableValues[m] = usableValues[m].replaceAll("\"", "");
@@ -310,15 +310,15 @@ public class CsvUtil {
                 } else {
                     usableValues[index] = values[m];
                 }
-                index ++;
+                index++;
             }
 
             HashMap<String, String> tmpMap = new HashMap<String, String>();
 
-            for (int j = 0; j < keys.length; j ++)
-                try{
+            for (int j = 0; j < keys.length; j++)
+                try {
                     tmpMap.put(keys[j], usableValues[j].replaceAll("\"", ""));
-                } catch (Exception e){
+                } catch (Exception e) {
                     tmpMap.put(keys[j], "");
                 }
             csvData.add(tmpMap);
@@ -326,7 +326,7 @@ public class CsvUtil {
         return csvData;
     }
 
-    public static ArrayList<HashMap<String, String>> arrayDataToMaps(ArrayList<String> fileData, String myDelimiter){
+    public static ArrayList<HashMap<String, String>> arrayDataToMaps(ArrayList<String> fileData, String myDelimiter) {
         String oldDelimiter = delimiter;
         delimiter = myDelimiter;
         ArrayList<HashMap<String, String>> csvData = arrayDataToMaps(fileData);
@@ -334,66 +334,66 @@ public class CsvUtil {
         return csvData;
     }
 
-    public static boolean compareQuantity(ArrayList<HashMap<String, String>> srcData, ArrayList<HashMap<String, String>> desData){
+    public static boolean compareQuantity(ArrayList<HashMap<String, String>> srcData, ArrayList<HashMap<String, String>> desData) {
         int srcNumOfRow = srcData.size();
         int desNumOfRow = desData.size();
-        boolean result = theSameColumns(srcData,desData);
+        boolean result = theSameColumns(srcData, desData);
 
-        if (srcNumOfRow != desNumOfRow){
+        if (srcNumOfRow != desNumOfRow) {
             LOGGER.info(String.format("Source #row = %d while Destination #row = %d", srcNumOfRow, desNumOfRow));
             result = false;
         }
         return result;
     }
 
-    public static ArrayList<HashMap<String, String>> fileToMaps(String filePath){
+    public static ArrayList<HashMap<String, String>> fileToMaps(String filePath) {
         ArrayList<String> fileData = FileUtil.readLine(filePath);
         return arrayDataToMaps(fileData);
     }
 
-    public static ArrayList<HashMap<String, String>> fileToMaps(String filePath, String myDelimiter){
+    public static ArrayList<HashMap<String, String>> fileToMaps(String filePath, String myDelimiter) {
         ArrayList<String> fileData = FileUtil.readLine(filePath);
         return arrayDataToMaps(fileData, myDelimiter);
     }
 
-    public static ArrayList<ArrayList<String>> folderToMaps(String folder, String fileName){
+    public static ArrayList<ArrayList<String>> folderToMaps(String folder, String fileName) {
         ArrayList<ArrayList<String>> csvDataList = FileUtil.readFolder(folder, fileName);
         return csvDataList;
     }
 
-    public static ArrayList<ArrayList<String>> folderToMaps(String folder, String fileName, String myHeaders){
+    public static ArrayList<ArrayList<String>> folderToMaps(String folder, String fileName, String myHeaders) {
         ArrayList<ArrayList<String>> csvDataList = FileUtil.readFolder(folder, fileName);
-        for(int i = 0; i < csvDataList.size(); i ++)
+        for (int i = 0; i < csvDataList.size(); i++)
             csvDataList.get(i).add(0, myHeaders);
         return csvDataList;
     }
 
-    public static boolean theSameColumns(ArrayList<HashMap<String, String>> srcData, ArrayList<HashMap<String, String>> desData){
+    public static boolean theSameColumns(ArrayList<HashMap<String, String>> srcData, ArrayList<HashMap<String, String>> desData) {
 
         int srcNumOfColumn = srcData.get(0).size();
         int desNumOfColumn = desData.get(0).size();
         boolean result = true;
 
-        if (srcNumOfColumn != desNumOfColumn){
+        if (srcNumOfColumn != desNumOfColumn) {
             LOGGER.info(String.format("Source #column = %d while Destination #column = %d", srcNumOfColumn, desNumOfColumn));
             result = false;
         } else {
-            Set <String> srcKeys = srcData.get(0).keySet();
-            Set <String> desKeys = desData.get(0).keySet();
+            Set<String> srcKeys = srcData.get(0).keySet();
+            Set<String> desKeys = desData.get(0).keySet();
 
-            for(String srcKey: srcKeys){
+            for (String srcKey : srcKeys) {
 
                 boolean found = false;
-                for(String desKey: desKeys){
+                for (String desKey : desKeys) {
 
-                    if(srcKey.equals(desKey)){
+                    if (srcKey.equals(desKey)) {
                         //desKeys.remove(desKey);
                         found = true;
                         break;
                     }
                 }
 
-                if (found == false){
+                if (found == false) {
                     LOGGER.error(String.format("Cannot find key %s in keySet %s", srcKey, desKeys.toString()));
                     result = false;
                     break;
@@ -403,13 +403,13 @@ public class CsvUtil {
         return result;
     }
 
-    public static boolean compareQuantity(String srcCsv, String desCsv){
+    public static boolean compareQuantity(String srcCsv, String desCsv) {
         ArrayList<HashMap<String, String>> srcData = fileToMaps(srcCsv);
         ArrayList<HashMap<String, String>> desData = fileToMaps(desCsv);
         return compareQuantity(srcData, desData);
     }
 
-    public static boolean compareQuantity(String srcCsv, String desCsv, String myDelimiter){
+    public static boolean compareQuantity(String srcCsv, String desCsv, String myDelimiter) {
         ArrayList<HashMap<String, String>> srcData = fileToMaps(srcCsv, myDelimiter);
         ArrayList<HashMap<String, String>> desData = fileToMaps(desCsv, myDelimiter);
         return compareQuantity(srcData, desData);
