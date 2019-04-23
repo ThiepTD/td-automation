@@ -5,9 +5,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import td_automation.Util.Constant;
 import td_automation.Util.CsvUtil;
-import td_automation.Util.FileUtil;
-
-import java.util.ArrayList;
 
 import static org.junit.Assert.assertTrue;
 
@@ -46,8 +43,8 @@ public class CsvTest{
     @Test
     public void csvListTest(){
         LOGGER.info("------------- Start running csvListTest -------------");
-        srcCsv = Constant.RESOURCE_PATH + "csv/td.csv";
-        desCsv = "/Users/thiep/Documents/2019-04-14";
+        srcCsv = Constant.RESOURCE_PATH + "csv/media_user_data.csv";
+        desCsv = "/Users/thiep/Documents/2019-04-17";
         String myDelimiter = "\\^";
 
         boolean result = CsvUtil.compareCsvList(srcCsv, desCsv, "part-",  myDelimiter);
