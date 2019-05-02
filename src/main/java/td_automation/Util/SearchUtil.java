@@ -16,7 +16,7 @@ public class SearchUtil {
         return searchMaps(srcMap, desMap);
     }
 
-    public static boolean searchMaps(HashMap<Object, Object> srcMap, HashMap<Object, Object> desMap){
+    public static boolean searchMaps(HashMap<Object, Object> srcMap, HashMap<Object, Object> desMap) {
         int s3Lines = srcMap.keySet().size();
         int tdLines = desMap.keySet().size();
         boolean result = true;
@@ -39,22 +39,26 @@ public class SearchUtil {
             }
         }
 
-        // Search by value
-        LOGGER.info("##########################################");
-        LOGGER.info("------------------------------------ Search by value ----------------------------------");
-        LOGGER.info("##########################################");
-        Object[] values = srcMap.values().toArray();
-        Object[] newKeys = srcMap.keySet().toArray();
+        if (srcMap.size() > 0) {
 
-        for (int i = 0; i < values.length; i++) {
+            // Search by value
+            LOGGER.info("##########################################");
+            LOGGER.info("------------------------------------ Search by value ----------------------------------");
+            LOGGER.info("##########################################");
+            Object[] values = srcMap.values().toArray();
+            Object[] newKeys = srcMap.keySet().toArray();
 
-            if (!desMap.containsValue(values[i])) {
-                result = false;
-                LOGGER.info(String.format("--------------------------> Line %s not found !", srcMap.get(newKeys[i])));
-            } else {
-                match++;
+            for (int i = 0; i < values.length; i++) {
+
+                if (!desMap.containsValue(values[i])) {
+                    result = false;
+                    LOGGER.info(String.format("--------------------------> Line %s not found !", srcMap.get(newKeys[i])));
+                } else {
+                    match++;
+                }
             }
         }
+
         LOGGER.info(String.format("Total td lines %d ...", tdLines));
         LOGGER.info(String.format("Total Krux lines %d ...", s3Lines));
         LOGGER.info(String.format("Number of match(es) found %d ...", match));
