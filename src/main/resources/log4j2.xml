@@ -21,7 +21,7 @@
         </RollingFile>
     </Appenders>
     <Loggers>
-        <Logger name="td_automation.tdautomation.CsvTest" level="info" additivity="false">
+        <Logger name="td_automation.plugin_automation.CsvTest" level="info" additivity="false">
             <AppenderRef ref="LogToConsole"/>
             <AppenderRef ref="LogToRollingFile"/>
         </Logger>

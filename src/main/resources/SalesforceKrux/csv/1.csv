@@ -1,0 +1,161 @@
+Category,SubCategory,Type,Name,SegmentId,SegmentIdLong,Last Compute Day,Description
+Instance,APAC,Analytics,All Converters APAC,MmxKn6WX,txrdxkqv9,2019-04-09,,1554832901
+Instance,APAC,Analytics,All media impressions APAC,Ml_RODx8,tw2rvjymm,2019-04-09,,1554832901
+Instance,APAC,Analytics,All Non Converters APAC,MmxKSBld,txrdt5rsf,2019-04-09,,1554832901
+Instance,APAC,Analytics,All site visitors APAC,Mfq-uYNz,trjcmfp4l,2019-04-09,,1554832901
+"",,Insight,APAC_IQOS_FAQ_Site_Visitors_1x180,McKp8qXT,togo4lfmt,2019-04-09,,1554832901
+Personas,Australia,Analytics,AU_Analytics_1PD_Media-Exposure_Exposed_1x180,Ml1YZ6Eb,twxwajjxp,2019-04-09,,1554832901
+Personas,Hong Kong,Analytics,HK_Analytics_1PD_Media-Exposure_Exposed_1x180,Ml1Y_mdE,twxwgfb9i,2019-04-09,,1554832901
+"",,Test,JP_1PD_Campaign_Impressions,MYho7fyk,tk9ral3hy,2019-04-09,,1554832901
+"",,,JP_1PD_Iqos-JP_cart-abandoned_1x180,MZhAecY8,tl40kby56,2019-04-09,People who added to cart but not purchased over the past 180 days. Updated daily,1554832901
+"",,,JP_1PD_Iqos-JP_cart-abandoned_1x90,MUuMleq3,thxoawe9l,2019-04-09,People who added to cart but not purchased over the past 90 days. Updated daily,1554832901
+"",,Analytics,JP_1PD_IQOS-JP_IQOS 3 & Multi Purchasers_1x180,MV42aLJp,tiyhy8u7f,2019-04-07,,1554832901
+Conversion,Japan,Analytics,JP_1PD_IQOS.jp & ABS_Site-Visitor_Frequency_Allx180,MdOWj3U0,tpd29uq36,2019-04-09,,1554832901
+"",,Analytics,JP_1PD_IQOS.jp & Nokemuhara.jp_Site-Visitor_Frequency_Allx180,MXhBQAcU,tkdvsgo7q,2019-04-09,Those who visited both IQOS.jp and Nokemuhara.jp,1554832901
+Site Visitors,,Analytics,JP_1PD_nokemuhara.jp_Site-Visitor_Frequency_Allx180,MXVmpPtA,tj782nbgy,2019-04-09,,1554832901
+"",,,JP_1PD_Nokemuhara_Banner Click,MXg_yh62,tkdvdvhhk,2019-04-09,Who clicked Nokemuhara banner ads.,1554832901
+Media,Japan,Analytics,JP_1PD_Nokemuhara_Banner_Clicks_1x180,Mc5q0OlT,to3vzb981,2019-04-09,,1554832901
+Media,Japan,Analytics,JP_1PD_Nokemuhara_Banner_Clicks_2x180,Mc5t1jUu,to3wtih70,2019-04-09,,1554832901
+Media,Japan,Analytics,JP_1PD_Nokemuhara_Banner_Clicks_3+x180,Mc5vnZYd,to3xa95rj,2019-04-09,,1554832901
+"",,,JP_1PD_Nokemuhara_Banner_Impression,MXhAg0v1,tkdvk3lhj,2019-04-09,Who are exposed to No! Kemuhara Campaign.,1554832901
+Media,Japan,Analytics,JP_1PD_Nokemuhara_Banner_Impressions_1x180,Mcya06uX,to0a8oj6h,2019-04-09,,1554832901
+Media,Japan,Analytics,JP_1PD_Nokemuhara_Banner_Impression_11-50x180,Mc0YYfYk,to092tody,2019-04-09,,1554832901
+Media,Japan,Analytics,JP_1PD_Nokemuhara_Banner_Impression_2-5x180,McyctFiO,to0brfqxs,2019-04-09,,1554832901
+Media,Japan,Analytics,JP_1PD_Nokemuhara_Banner_Impression_51+x180,Mc0Y7ABi,to0977kr4,2019-04-09,,1554832901
+Media,Japan,Analytics,JP_1PD_Nokemuhara_Banner_Impression_6-10x180,MczG-bYj,to0nhn4ol,2019-04-09,,1554832901
+"",,Analytics,JP_1PD_Traffic Source_Yahoo!,MVnFw0j0,tipqllrwm,2019-04-09,,1554832901
+Campaign,,Analytics,JP_1PD_Valentine's Day 201901_Visitor_x90,MgRqg34X,tr2fkehz9,2019-04-09,Users who visited website from Valentine's Day Campaign,1554832901
+"",,Utm_campaign,JP_3.0 Launch Campaign,MUt0N1DF,thxhjhaaf,2019-04-09,"Traffic from utm_campaign which includes ""3.0""",1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Media-Exposure_NonExposed_1x180,MX4-Ods2,tkpo4xkug,2019-04-09,,1554832901
+Conversion,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Onsite-Behaviour_Converters Purchasers_1x15,MdMGgYsG,tpczaxoc4,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Onsite-Behaviour_Converters Purchasers_1x180,MX5nAbMH,tkp0f91sp,2019-04-07,,1554832901
+Conversion,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Onsite-Behaviour_Converters Purchasers_1x30,MdMOkHCX,tpc1jfcp1,2019-04-09,,1554832901
+Conversion,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Onsite-Behaviour_Converters Purchasers_1x30-15,MdMFydGQ,tpcy3rlsy,2019-04-09,,1554832901
+Conversion,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Onsite-Behaviour_Converters Purchasers_1x45,MdMOHJDb,tpc1ewk7x,2019-04-09,,1554832901
+Conversion,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Onsite-Behaviour_Converters Purchasers_1x45-30,MdMFRVKY,tpcyylhre,2019-04-09,,1554832901
+Conversion,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Onsite-Behaviour_Converters Purchasers_1x60,MdMNSDL7,tpc06l995,2019-04-09,,1554832901
+Conversion,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Onsite-Behaviour_Converters Purchasers_1x60-45,MdMDKrRW,tpcydkwyw,2019-04-09,,1554832901
+Conversion,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Onsite-Behaviour_Converters Purchasers_1x90,MdMMrz1j,tpc00nff5,2019-04-05,,1554832901
+Conversion,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Onsite-Behaviour_Converters Purchasers_1x90-60,MdMCdc2I,tpcx6is5m,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Onsite-Behaviour_Converters Try It_1x180,MX5nYJvI,tkp0jzc5m,2019-04-07,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Onsite-Behaviour_Non Converters_1x180,MX5oanIT,tkp0ucry9,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Page-Visit_cart_1x180,MX5OBzrJ,tkptiryvv,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Page-Visit_home_1x180,MX5RVQb5,tkpufr03f,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Page-Visit_Iqos 2.4 Plus_1x180,Mj2xyc_j,tu7f3rkol,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Page-Visit_Iqos 3 Multi_1x180,MZZ9UnOf,tl1jdvu3l,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Page-Visit_Iqos 3_1x180,MX5T6YnW,tkpu5jtrc,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Page-Visit_shipping information_1x180,MX5SBBv7,tkpumlyml,2019-04-09,,1554832901
+Conversion,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Returning_Visitor_1-3x90,MdOR--Jx,tpd1z4233,2019-04-09,,1554832901
+Conversion,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Returning_Visitor_16+x90,MdOUTysn,tpd2nc9dl,2019-04-09,,1554832901
+Conversion,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Returning_Visitor_4-7x90,MdOTO5cN,tpd2cl5x7,2019-04-09,,1554832901
+Conversion,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Returning_Visitor_8-15x90,MdOT0lts,tpd2ihxxa,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Site-Visitor_Frequency_1-5x180,MX5DCUC3,tkpqgy9zd,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Site-Visitor_Frequency_1-5x7,MhE5i0Nc,tsrpdp0vi,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Site-Visitor_Frequency_1-5x90,MhFco9cN,tsry4ab2n,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Site-Visitor_Frequency_11+x180,MX5NZBWY,tkptcesyy,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Site-Visitor_Frequency_11+x30,MhFyxAyM,tsr49am8e,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Site-Visitor_Frequency_11+x7,MhFxuyHJ,tsr4yyixn,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Site-Visitor_Frequency_11+x90,MhFzjqqq,tsr5g686k,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Site-Visitor_Frequency_1x180,Mj1ssYal,tu6wxlg6f,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Site-Visitor_Frequency_6-10x180,MX5MjXwf,tkps31c4h,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Site-Visitor_Frequency_6-10x30,MhFq5Xaz,tsr22otvp,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Site-Visitor_Frequency_6-10x7,MhFtsoAS,tsr3un0w0,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Site-Visitor_Frequency_6-10x90,MhFrF2jV,tsr24mzjb,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Site-Visitor_Frequency_Allx180,MP1jUdKv,tdngfw44x,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Site-Visitor_Frequency_Returning User,Mj1tkKKP,tu6w6avb1,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Status_Newly Registered_1x180,MX5B1iRp,tkpp4zv1n,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Status_Not Registered_1x180,MX5f7Sj2,tkpyhj1hk,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Status_Registered_1x15,Mc7ThOpu,to4o06whs,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Status_Registered_1x180,MV4xvnb1,tiygonddz,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Status_Registered_1x30-15,Mc7S5bJm,to4ouy84o,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Status_Registered_1x45-30,Mc7RupcN,to4oja3xb,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Status_Registered_1x60-45,Mc7Qp5T2,to4n8ktb8,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Iqos-JP_Status_Registered_1x90-60,Mc7P2Nhq,to4n0ie3w,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Media-Exposure_Exposed_1x180,MX43LpEc,tkpm6kj96,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Media-Exposure_Impressions_1-5x180,MX46byFc,tkpn2109q,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Media-Exposure_Impressions_11-50x180,MX4-1YTf,tkppaz8dt,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Media-Exposure_Impressions_51+x180,MX4_GVa-,tkppdnhv0,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Media-Exposure_Impressions_6-10x180,MX4_dxD7,tkppha5hp,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Media-Interaction_Clicks_1x180,MX5AjmjY,tkppr7jai,2019-04-09,,1554832901
+Personas,Japan,Analytics,JP_Analytics_1PD_Media-Interaction_Clicks_2+x180,MX4_7T4a,tkpplw5e0,2019-04-09,,1554832901
+Consumer Journey Stages,Japan,Analytics,JP_Consumer Journey Stages_1 Universe,MeEUZP9e,tp4pk8nv0,2019-04-09,All cookies in the DMP for a given market,1554832901
+Consumer Journey Stages,Japan,Analytics,JP_Consumer Journey Stages_4b Discover Dormant,MmWtZY0q,txeb4ej60,2019-04-09,Have decided IQOS is not for them. No longer considered. Captures only 1 page visit of IQOS site (Non-returning user) Excluding existing customers or trialists,1554832901
+Consumer Journey Stages,Japan,Analytics,JP_Consumer Journey Stages_5 Consider,MmWvEuEj,txeck5met,2019-04-09,"All returning IQOS visitors OR registered excluding customers OR those visiting shop, try product page, Store Locator, support or Catalog Page OR cart abandoners",1554832901
+Consumer Journey Stages,Japan,Analytics,JP_Consumer Journey Stages_6 Find,MmhohCZx,txjp3pp0z,2019-04-09,"All returning IQOS visitors OR registered who have visited shop, try product page, Store Locator, support or Catalog Page OR cart abandoners",1554832901
+Consumer Journey Stages,Japan,Analytics,JP_Consumer Journey Stages_7 Active,Mj84hy9R,tvagiq74j,2019-04-09,Captures all users who engaged (registered or purchased) in the last 60 days,1554832901
+Consumer Journey Stages,Japan,Analytics,JP_Consumer Journey Stages_8 Dormant,Mj85NBRD,tvagph201,2019-04-09,Captures all users who are registered over 60 days ago OR not purchased anything in the last 60 days.,1554832901
+"",,,JP_Registered within 90 Days,MU0tEJsB,th0vuzukz,2019-04-09,,1554832901
+Age,APAC,Master,Master_1PD_IQOS_AgeGating_Accept,MfjH2v4P,trfg3ezkx,2019-04-03,Contains all users who have clicked Yes or OK to the Age Gating button on their respective IQOS site,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Iqos-MY_Media-Exposure_NonExposed_1x180,MZhRseJk,tl45cbv1i,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Iqos-MY_Onsite-Behaviour_Converters Purchasers_1x180,MZhS0zJw,tl45nl9y6,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Iqos-MY_Onsite-Behaviour_Converters Try It_1x180,MZhTUtxS,tl45sllno,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Iqos-MY_Onsite-Behaviour_Non Converters_1x180,MZhUJXqQ,tl450tf6a,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Iqos-MY_Page-Visit_cart_1x180,MZhU3Thy,tl457zjlw,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Iqos-MY_Page-Visit_home_1x180,MZhVydZq,tl46g7wt4,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Iqos-MY_Page-Visit_Iqos 2.4 Plus_1x180,Mj2xJWaX,tu7fxcmqx,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Iqos-MY_Page-Visit_Iqos 3 Multi_1x180,MZh7R_kc,tl5gvp2em,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Iqos-MY_Page-Visit_Iqos 3_1x180,MZh8CKov,tl5g28qe5,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Iqos-MY_Page-Visit_shipping information_1x180,MZh93du3,tl5hljsjt,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Iqos-MY_Site-Visitor_Frequency_1-5x180,MZiCTN1A,tl5itt3e6,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Iqos-MY_Site-Visitor_Frequency_1-5x30,MhE-_i4m,tsrqv5ewo,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Iqos-MY_Site-Visitor_Frequency_1-5x7,MhE5IaOM,tsro9lnoe,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Iqos-MY_Site-Visitor_Frequency_1-5x90,MhFZKrW-,tsrx5lemo,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Iqos-MY_Site-Visitor_Frequency_11+x180,MZiDKjVh,tl5i2g0b3,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Iqos-MY_Site-Visitor_Frequency_11+x30,MhFx7k2e,tsr40yej0,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Iqos-MY_Site-Visitor_Frequency_11+x7,MhFxARfw,tsr4ro7cy,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Iqos-MY_Site-Visitor_Frequency_11+x90,MhFzL50b,tsr5dhqjx,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Iqos-MY_Site-Visitor_Frequency_1x180,Mj1sUuYT,tu6wtwj2t,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Iqos-MY_Site-Visitor_Frequency_6-10x180,MZiDpVEf,tl5i69xn1,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Iqos-MY_Site-Visitor_Frequency_6-10x30,MhFqj-5s,tsr2zcoou,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Iqos-MY_Site-Visitor_Frequency_6-10x7,MhFtCRCp,tsr3n10xn,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Iqos-MY_Site-Visitor_Frequency_6-10x90,MhFraz2Q,tsr27wqoy,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Iqos-MY_Site-Visitor_Frequency_Allx180,MXxGRNxA,tklta1oeq,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Iqos-MY_Site-Visitor_Frequency_Returning User,Mj1s-oKA,tu6w0fzte,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Iqos-MY_Status_Registered_1x180,MZiMfI0A,tl5lnk0nm,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Media-Exposure_Exposed_1x180,MZiOXkl4,tl5l6do1m,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Media-Exposure_Impressions_1-5x180,MZiX_18M,tl5ouka6m,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Media-Exposure_Impressions_11-50x180,MZiYr-NA,tl5o1f88y,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Media-Exposure_Impressions_51+x180,MZiZf-Dd,tl5o9kewf,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Media-Exposure_Impressions_6-10x180,MZiaNCFt,tl5pgllvj,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Media-Interaction_Clicks_1x180,MZibD8Fa,tl5po53t4,2019-04-09,,1554832901
+Personas,Malaysia,Analytics,MY_Analytics_1PD_Media-Interaction_Clicks_2+x180,MZibrSNm,tl5pva6c4,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Media-Exposure_NonExposed_1x180,MZakRsGJ,tl1t6zlln,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Onsite-Behaviour_Converters Purchasers_1x180,MZardDKQ,tl1v6ok5u,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Onsite-Behaviour_Converters Try It_1x180,MZapE0ws,tl1vixada,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Onsite-Behaviour_Non Converters_1x180,MZaoA4T6,tl1u8bi4c,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Page-Visit_cart_1x180,MZav4ozZ,tl1xexyzv,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Page-Visit_home_1x180,MZaxmzgz,tl1xv4ypx,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Page-Visit_Iqos 2.4 Plus_1x180,Mj2xhLDI,tu7f02hcq,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Page-Visit_Iqos 3 Multi_1x180,MZghGpt_,tl4ruyvwx,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Page-Visit_Iqos 3_1x180,MZgiogOc,tl4r98oi2,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Page-Visit_shipping information_1x180,MZgjTjF5,tl4sgyi9n,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Site-Visitor_Frequency_1-5x180,MZgnl5yf,tl4tnr1e5,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Site-Visitor_Frequency_1-5x30,MhE_JFLJ,tsrqxmzp3,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Site-Visitor_Frequency_1-5x7,MhE5Wx3i,tsrpbud7o,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Site-Visitor_Frequency_1-5x90,MhFabo2b,tsryh8ao9,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Site-Visitor_Frequency_11+x180,MZgpM6Bn,tl4t3ur45,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Site-Visitor_Frequency_11+x30,MhFykZwC,tsr47bslw,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Site-Visitor_Frequency_11+x7,MhFxIb4o,tsr4sy2c6,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Site-Visitor_Frequency_11+x90,MhFzWn9u,tsr5e5y30,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Site-Visitor_Frequency_1x180,Mj1shjDC,tu6wvwlsk,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Site-Visitor_Frequency_6-10x180,MZgp6jLi,tl4uay8fo,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Site-Visitor_Frequency_6-10x30,MhFqvjkg,tsr205pki,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Site-Visitor_Frequency_6-10x7,MhFt3h56,tsr3wdamk,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Site-Visitor_Frequency_6-10x90,MhFrPpUM,tsr2550e2,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Site-Visitor_Frequency_Allx180,MWxOr9rb,tjqa5buct,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Site-Visitor_Frequency_Returning User,Mj1tQx_E,tu6w29zrq,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Status_Newly Registered_1x180,MZgreeaV,tl4uqkoiv,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Status_Not Registered_1x180,MZgsrRli,tl4u2j6wk,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Iqos-NZ_Status_Registered_1x180,MZg8D2Jw,tl4zb75qa,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Media-Exposure_Exposed_1x180,MZg9In4x,tl4zmyldv,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Media-Exposure_Impressions_1-5x180,MZg-I8Iu,tl4zwzyrk,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Media-Exposure_Impressions_11-50x180,MZg_AkH8,tl4z5oh22,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Media-Exposure_Impressions_51+x180,MZhMmn4l,tl43xg19j,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Media-Exposure_Impressions_6-10x180,MZhM9xDo,tl43023h2,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Media-Interaction_Clicks_1x180,MZhBVHFd,tl40su4rz,2019-04-09,,1554832901
+Personas,New Zealand,Analytics,NZ_Analytics_1PD_Media-Interaction_Clicks_2+x180,MZhB0DQA,tl40xoy2q,2019-04-09,,1554832901
+Personas,Philippines,Analytics,PH_Analytics_1PD_Media-Exposure_Exposed_1x180,Ml1ZYAnM,twxwj8hge,2019-04-09,,1554832901
+Personas,Japan,Analytics,P_Analytics_1PD_Iqos-JP_Site-Visitor_Frequency_1-5x30,MhE_aU8L,tsrq0bv55,2019-04-09,,1554832901
+Personas,Singapore,Analytics,SG_Analytics_1PD_Media-Exposure_Exposed_1x180,Ml1ZyZBc,twxwocpny,2019-04-09,,1554832901
+Personas,Thailand,Analytics,TH_Analytics_1PD_Media-Exposure_Exposed_1x180,Ml1aYPwS,twxwt9eo0,2019-04-09,,1554832901
+Personas,Vietnam,Analytics,VN_Analytics_1PD_Media-Exposure_Exposed_1x180,Ml1aJGvm,twxwrwb44,2019-04-09,,1554832901
