@@ -1,4 +1,4 @@
-package td_automation.plugin_automation.SalesforceKrux;
+package td_automation.plugin_automation.Sfdmp;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,14 +11,14 @@ import static org.junit.Assert.assertTrue;
 
 public class FileUtilTest {
 
-    private String srcCsv = Constant.RESOURCE_PATH + "SalesforceKrux/csv/source.csv";
-    private String desCsv = Constant.RESOURCE_PATH + "SalesforceKrux/csv/destination.csv";
+    private String srcCsv = Constant.RESOURCE_PATH + "Sfdmp/csv/source.csv";
+    private String desCsv = Constant.RESOURCE_PATH + "Sfdmp/csv/destination.csv";
     public static Logger LOGGER = LogManager.getLogger(FileUtilTest.class.getName());
 
 //    @Test
     public void fileListTest(){
         LOGGER.info("------------- Start running fileListTest -------------");
-        srcCsv = Constant.RESOURCE_PATH + "SalesforceKrux/csv/media_user_data.csv";
+        srcCsv = Constant.RESOURCE_PATH + "Sfdmp/csv/media_user_data.csv";
         desCsv = "/Users/thiep/Documents/2019-04-17";
         ArrayList<String> srcData = (new FileUtil()).readLine(srcCsv);
         ArrayList<ArrayList<String>> dataList = (new FileUtil()).readFolder(desCsv, "part-");
@@ -31,7 +31,7 @@ public class FileUtilTest {
 //    @Test
     public void mapTest(){
         LOGGER.info("------------- Start running fileListTest -------------");
-        srcCsv = Constant.RESOURCE_PATH + "SalesforceKrux/csv/krux.csv";
+        srcCsv = Constant.RESOURCE_PATH + "Sfdmp/csv/krux.csv";
         desCsv = "/Users/thiep/Documents/2019-04-20";
         ArrayList<String> srcData = (new FileUtil()).readLine(srcCsv);
         ArrayList<ArrayList<String>> dataList = (new FileUtil()).readFolder(desCsv, "part-");
@@ -42,7 +42,7 @@ public class FileUtilTest {
     @Test
     public void customMapTest(){
         LOGGER.info("------------- Start running fileListTest -------------");
-        srcCsv = Constant.RESOURCE_PATH + "SalesforceKrux/csv/media_user_data.csv";
+        srcCsv = Constant.RESOURCE_PATH + "Sfdmp/csv/media_user_data.csv";
         desCsv = "/Users/thiep/Documents/2019-04-17";
         ArrayList<String> srcData = (new FileUtil()).readLine(srcCsv);
         ArrayList<ArrayList<String>> dataList = (new FileUtil()).readFolder(desCsv, "part-");
@@ -53,8 +53,8 @@ public class FileUtilTest {
     @Test
     public void checksumTest(){
         LOGGER.info("------------- Start running fileListTest -------------");
-        srcCsv = Constant.RESOURCE_PATH + "SalesforceKrux/csv/krux.csv";
-        desCsv = Constant.RESOURCE_PATH + "SalesforceKrux/csv/s3.csv";
+        srcCsv = Constant.RESOURCE_PATH + "Sfdmp/csv/krux.csv";
+        desCsv = Constant.RESOURCE_PATH + "Sfdmp/csv/s3.csv";
         String md5Value = FileUtil.fileToMd5(srcCsv);
         System.out.println(md5Value);
 
