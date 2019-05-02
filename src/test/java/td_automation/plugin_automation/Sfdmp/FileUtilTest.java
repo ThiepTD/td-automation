@@ -28,13 +28,14 @@ public class FileUtilTest {
         assertTrue(result);
     }
 
-//    @Test
+    @Test
     public void mapTest(){
-        LOGGER.info("------------- Start running fileListTest -------------");
-        srcCsv = Constant.RESOURCE_PATH + "Sfdmp/csv/krux.csv";
-        desCsv = "/Users/thiep/Documents/2019-04-20";
-        ArrayList<String> srcData = (new FileUtil()).readLine(srcCsv);
-        ArrayList<ArrayList<String>> dataList = (new FileUtil()).readFolder(desCsv, "part-");
+        LOGGER.info("------------- Start running mapTest -------------");
+        desCsv = Constant.RESOURCE_PATH + "Sfdmp/csv/14399983.csv";
+        srcCsv = "/Users/thiep/Documents/dc";
+        //CmdUtil.execute("gunzip", srcCsv + "/part-r*");
+        ArrayList<String> srcData = (new FileUtil()).readLine(desCsv);
+        ArrayList<ArrayList<String>> dataList = (new FileUtil()).readFolder(srcCsv, "part-");
         boolean result = SearchUtil.searchMaps(dataList, srcData,"\\^");
         assertTrue(result);
     }
