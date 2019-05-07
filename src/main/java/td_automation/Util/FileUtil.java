@@ -3,6 +3,9 @@ package td_automation.Util;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 import java.io.*;
 import java.util.*;
@@ -103,10 +106,9 @@ public class FileUtil {
             for (int i = 1; i < totalLine; i++) {
 
                 foundIndex = searchRecord(src.get(i), des);
-                if (foundIndex == -1){
+                if (foundIndex == -1) {
                     result = false;
-                }
-                else {
+                } else {
                     found++;
 
                     // Remove found element out of des so that the next search won't touch it
@@ -151,17 +153,34 @@ public class FileUtil {
         return result;
     }
 
-    public static String fileToMd5(String fileName){
+    public static String fileToMd5(String fileName) {
         String result = "";
 
         try {
             result = DigestUtils.md5Hex(new FileInputStream(fileName));
+        } catch (FileNotFoundException e) {
+            LOGGER.error(e.toString());
+        } catch (IOException e) {
+            LOGGER.error(e.toString());
+        }
+        return result;
+    }
+
+    public JSONObject readJson(String filename) {
+        JSONParser jsonParser = new JSONParser();
+        JSONObject jsonObject = new JSONObject();
+
+        try (FileReader reader = new FileReader(Constant.RESOURCE_PATH + "Configuration/" + filename)) {
+            Object obj = jsonParser.parse(reader);
+            jsonObject = (JSONObject) obj;
         } catch (FileNotFoundException e){
             LOGGER.error(e.toString());
         } catch (IOException e){
             LOGGER.error(e.toString());
+        } catch (ParseException e){
+            LOGGER.error(e.toString());
         }
-        return result;
+        return jsonObject;
     }
 /*
     public static boolean mergeFile(String folder, String fileExpression, String outputFile) {

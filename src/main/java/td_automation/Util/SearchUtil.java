@@ -16,6 +16,12 @@ public class SearchUtil {
         return searchMaps(srcMap, desMap);
     }
 
+    public static boolean searchMap(ArrayList<String> src, ArrayList<String> des, String myDelimiter) {
+        HashMap<Object, Object> desMap = Util.arrayStringToMap(des, true);
+        HashMap<Object, Object> srcMap = Util.arrayStringToMap(src, true);
+        return searchMaps(srcMap, desMap);
+    }
+
     public static boolean searchMaps(HashMap<Object, Object> srcMap, HashMap<Object, Object> desMap) {
         int s3Lines = srcMap.keySet().size();
         int tdLines = desMap.keySet().size();

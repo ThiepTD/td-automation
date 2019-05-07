@@ -1,0 +1,19 @@
+{
+  "developmentAws": {
+    "baseUrl": "https://api-development.treasuredata.com",
+    "apiKey": "TD1 1/1d8f2d9d5cfd4f6321d5291771cacc8fb290b5ea"
+  },
+  "stagingAws": {
+    "baseUrl": "https://api-staging.treasuredata.com",
+    "ApiKey": "TD1 1/1d8f2d9d5cfd4f6321d5291771cacc8fb290b5ea"
+  },
+  "productionAws": {
+    "baseUrl": "https://api.treasuredata.com",
+    "ApiKey": "TD1 1/1d8f2d9d5cfd4f6321d5291771cacc8fb290b5ea"
+  },
+  "apiList": {
+    "dbList": "/v3/database/list",
+    "accList": "/v4/account",
+    "createDb": "/v3/database/create/"
+  }
+}

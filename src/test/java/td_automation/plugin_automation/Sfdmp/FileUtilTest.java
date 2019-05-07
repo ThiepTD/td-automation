@@ -2,7 +2,7 @@ package td_automation.plugin_automation.Sfdmp;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.Test;
+import org.testng.annotations.Test;
 import td_automation.Util.*;
 
 import java.util.ArrayList;
@@ -48,6 +48,17 @@ public class FileUtilTest {
         ArrayList<String> srcData = (new FileUtil()).readLine(srcCsv);
         ArrayList<ArrayList<String>> dataList = (new FileUtil()).readFolder(desCsv, "part-");
         boolean result = SearchUtil.searchMaps(dataList, srcData, "\\^");
+        assertTrue(result);
+    }
+
+    @Test
+    public void searchMapTest(){
+        LOGGER.info("------------- Start running searchMapTest -------------");
+        srcCsv = Constant.RESOURCE_PATH + "Sfdmp/csv/Result.csv";
+        desCsv = Constant.RESOURCE_PATH + "Sfdmp/csv/Result1.csv";
+        ArrayList<String> srcData = (new FileUtil()).readLine(srcCsv);
+        ArrayList<String> desData = (new FileUtil()).readLine(desCsv);
+        boolean result = SearchUtil.searchMap(srcData, desData, "\\^");
         assertTrue(result);
     }
 

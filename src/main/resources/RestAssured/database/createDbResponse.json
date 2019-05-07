@@ -1,0 +1,13 @@
+{
+  "validResponse": {
+    "database": "%s"
+  },
+
+  "errorResponse": {
+    "error": "Access denied",
+    "message": "Access denied",
+    "text": "Access denied",
+    "severity": "error",
+    "status_code": 403
+  }
+}
