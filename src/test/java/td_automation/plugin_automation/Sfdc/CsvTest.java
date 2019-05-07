@@ -2,7 +2,7 @@ package td_automation.plugin_automation.Sfdc;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.Test;
+import org.testng.annotations.Test;
 import td_automation.Util.Constant;
 import td_automation.Util.CsvUtil;
 
@@ -36,7 +36,7 @@ public class CsvTest {
         srcCsv = Constant.RESOURCE_PATH + "Sfdmp/csv/Result.csv";
         desCsv = Constant.RESOURCE_PATH + "Sfdmp/csv/Result1.csv";
         String myDelimiter = "\\^";
-        boolean result = CsvUtil.compareCsv(srcCsv, desCsv, myDelimiter);
+        boolean result = CsvUtil.compareCsv(srcCsv, desCsv, null, myDelimiter);
         assertTrue(result);
     }
 

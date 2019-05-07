@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import td_automation.Util.CmdUtil;
 import td_automation.Util.Constant;
 import td_automation.Util.CsvUtil;
+import org.testng.annotations.Test;
 
 import static org.junit.Assert.assertTrue;
 
@@ -14,7 +15,7 @@ public class CmdTest {
     private String desCsv = Constant.RESOURCE_PATH + "csv/destination.csv";
     public static Logger LOGGER = LogManager.getLogger(CmdTest.class.getName());
 
-//    @Test
+    @Test
     public void cmdTest(){
         LOGGER.info("------------- Start running cmdTest -------------");
         String dbName = "sfdc_sample";
