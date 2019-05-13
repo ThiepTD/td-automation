@@ -1,5 +1,8 @@
 package td_automation.rest_assured.database;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.HashMap;
 
 public class Database {
@@ -10,6 +13,8 @@ public class Database {
     public static final String ORGANIZATION = "organization";
     public static final String PERMISSION = "permission";
     public static final String DETECT_PROTECTED = "delete_protected";
+
+    static Logger LOGGER = LogManager.getLogger(Database.class.getName());
 
     private HashMap<String, Object> db = new HashMap<String, Object>();
 
@@ -56,12 +61,16 @@ public class Database {
     }
 
     public void print(){
+        if (db == null) {
+            LOGGER.info("No object returned !");
+        }
+
         for(String key: db.keySet()) {
             Object value = db.get(key);
             if (value != null)
-                System.out.println(String.format("%s: %s", key, value.toString()));
+                LOGGER.info(String.format("%s: %s", key, value.toString()));
             else
-                System.out.println(String.format("%s: null", key));
+                LOGGER.info(String.format("%s: null", key));
         }
     }
 }

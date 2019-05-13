@@ -14,6 +14,7 @@
   "apiList": {
     "dbList": "/v3/database/list",
     "accList": "/v4/account",
-    "createDb": "/v3/database/create/"
+    "createDb": "/v3/database/create/",
+    "deleteDb": "/v3/database/delete/"
   }
 }

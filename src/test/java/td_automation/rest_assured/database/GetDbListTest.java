@@ -1,13 +1,12 @@
-package td_automation.rest_assured;
+package td_automation.rest_assured.database;
 
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeSuite;
-import td_automation.rest_assured.database.Database;
-import td_automation.rest_assured.database.GetDbList;
+import td_automation.rest_assured.ServiceApiBase;
 
-public class apiTest extends ServiceApiBase{
+public class GetDbListTest extends ServiceApiBase {
 
     public GetDbList dbList;
 

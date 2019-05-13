@@ -15,8 +15,6 @@ import static io.restassured.RestAssured.given;
 
 public class GetDbList extends ServiceApiBase {
 
-    private Response response;
-    private JsonPath jsonPath;
     private List<Database> databaseList;
     static Logger LOGGER = LogManager.getLogger(GetDbList.class.getName());
 
@@ -29,16 +27,15 @@ public class GetDbList extends ServiceApiBase {
     }
 
     public void makeApiCall() {
-        String url = getBaseUrl() + getApiList().get("dbList").toString();
+        String url = baseUrl + apiList.get("dbList").toString();
         response = given()
-                .header("Authorization", getApiKey())
+                .header("Authorization", apiKey)
                 .accept(ContentType.JSON)
                 .when()
                 .get(url);
 
         jsonPath = response.jsonPath();
-        List<Object> dbList = jsonPath.getList("databases");
-        initializeDb(dbList);
+        initializeDb();
     }
 
     public List<Database> getDatabaseList() {
@@ -53,7 +50,8 @@ public class GetDbList extends ServiceApiBase {
         return jsonPath;
     }
 
-    public void initializeDb(List<Object> databases) {
+    public void initializeDb() {
+        List<Object> databases = jsonPath.getList("databases");
         databaseList = new ArrayList<Database>();
         try {
             for (int i = 0; i < databases.size(); i++) {
@@ -100,7 +98,4 @@ public class GetDbList extends ServiceApiBase {
         return null;
     }
 
-    public void print() {
-        response.prettyPrint().toString();
-    }
 }

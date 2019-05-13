@@ -1,0 +1,25 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "RestAssured">
+    <test name = "createDb">
+        <classes>
+            <class name = "td_automation.rest_assured.database.CreateDbTest"/>
+        </classes>
+    </test>
+    <test name = "getDbList">
+        <classes>
+            <class name = "td_automation.rest_assured.database.GetDbListTest"/>
+        </classes>
+    </test>
+    <test name = "deleteDb">
+        <classes>
+            <class name = "td_automation.rest_assured.database.DeleteDbTest"/>
+        </classes>
+    </test>
+    <test name = "fullflow">
+        <classes>
+            <class name = "td_automation.rest_assured.database.DatabaseTest"/>
+        </classes>
+    </test>
+</suite>
