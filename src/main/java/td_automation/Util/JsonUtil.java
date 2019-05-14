@@ -2,8 +2,8 @@ package td_automation.Util;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,5 +19,22 @@ public class JsonUtil {
             }
         }
         return null;
+    }
+
+    public static ArrayList<String> jsonToCsv(String jsonString, String csvHeader, String delimiter){
+        ArrayList<String> result = new ArrayList<String>();
+        JSONArray jsonArray = new JSONArray(jsonString);
+        String [] headers = csvHeader.split(delimiter);
+        String tmp;
+        result.add(0, "fileName:fromJson");
+        result.add(csvHeader);
+        for (int i = 0; i < jsonArray.length(); i ++){
+            tmp = "";
+            for (int j = 0; j < headers.length; j ++){
+                tmp += ((JSONObject)jsonArray.get(i)).get(headers[j]) + delimiter;
+            }
+            result.add(tmp.substring(tmp.length() - 1));
+        }
+        return result;
     }
 }
