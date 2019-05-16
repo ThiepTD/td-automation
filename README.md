@@ -6,7 +6,7 @@ This is an automation framework for our QA team to support plugin automation tes
  - Test data generation by using existing Python code
 ## Setup
  - Make sure you have Java jdk installed & configured (JAVA_HOME) on your machine
- - Make sure you have Mave installed & configured (MAVEN_HOME) on your machine
+ - Make sure you have Mave installed & configured (MVN_HOME) on your machine
  - Check out the source code from [here](https://github.com/ThiepTD/td-automation). Noted that we will move the source code to an official QA repo soon
  - Run command "mvn clean install" to download dependencies
 ## IDE
