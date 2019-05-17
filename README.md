@@ -9,6 +9,7 @@ This is an automation framework for our QA team to support plugin automation tes
  - Make sure you have Mave installed & configured (MVN_HOME) on your machine
  - Check out the source code from [here](https://github.com/ThiepTD/td-automation). Noted that we will move the source code to an official QA repo soon
  - Run command "mvn clean install" to download dependencies
+ - Since we are using pyhon code to generate test data so please see [here](https://github.com/treasure-data/td-qa/tree/master/Tools/programs/data_generator) for Python setup
 ## IDE
  - You can use any IDE you want or you can use Eclipse or Intellij (Community version)
  - Import a maven project then you can start using the framework
