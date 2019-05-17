@@ -1,15 +1,15 @@
 {
   "developmentAws": {
     "baseUrl": "https://api-development.treasuredata.com",
-    "apiKey": "TD1 1/1d8f2d9d5cfd4f6321d5291771cacc8fb290b5ea"
+    "apiKey": "<your api key>"
   },
   "stagingAws": {
     "baseUrl": "https://api-staging.treasuredata.com",
-    "ApiKey": "TD1 1/1d8f2d9d5cfd4f6321d5291771cacc8fb290b5ea"
+    "ApiKey": "<your api key>"
   },
   "productionAws": {
     "baseUrl": "https://api.treasuredata.com",
-    "ApiKey": "TD1 1/1d8f2d9d5cfd4f6321d5291771cacc8fb290b5ea"
+    "ApiKey": "<your api key>"
   },
   "apiList": {
     "dbList": "/v3/database/list",
