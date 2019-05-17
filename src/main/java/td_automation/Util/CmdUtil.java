@@ -14,6 +14,9 @@ public class CmdUtil {
 
     static Logger LOGGER = LogManager.getLogger(CmdUtil.class.getName());
 
+    /*
+     - Execute command using process builder
+     */
     public static String execute(List<String> command) {
         String cmdOutput = "";
         try {
@@ -37,11 +40,39 @@ public class CmdUtil {
         return cmdOutput;
     }
 
-    public static boolean execute(String cmd) {
+    /*
+     - Execute command using Runtime.exec()
+     */
+    public static boolean execute(String cmd, String [] args) {
         try {
             LOGGER.info(cmd);
             Runtime rt = Runtime.getRuntime();
-            Process proc = rt.exec(cmd);
+            Process proc = rt.exec(cmd, args);
+            InputStream stdin = proc.getInputStream();
+            InputStreamReader isr = new InputStreamReader(stdin);
+            BufferedReader br = new BufferedReader(isr);
+            String line = null;
+            LOGGER.info("<OUTPUT>");
+            while ((line = br.readLine()) != null)
+                LOGGER.info(line);
+            LOGGER.info("</OUTPUT>");
+            int exitVal = proc.waitFor();
+            LOGGER.info("Process exitValue: " + exitVal);
+            return true;
+        } catch (Throwable t) {
+            t.printStackTrace();
+        }
+        return false;
+    }
+
+    /*
+     - Execute command using Runtime.exec()
+     */
+    public static boolean execute(String [] args) {
+        try {
+            LOGGER.info(args.toString());
+            Runtime rt = Runtime.getRuntime();
+            Process proc = rt.exec(args);
             InputStream stdin = proc.getInputStream();
             InputStreamReader isr = new InputStreamReader(stdin);
             BufferedReader br = new BufferedReader(isr);
@@ -75,4 +106,14 @@ public class CmdUtil {
         return execute(cmd);
     }
 
+    public static String generateData() {
+        String cmd = String.format("%scmd.sh", Constant.RESOURCE_PATH);
+        String folder = Constant.RESOURCE_PATH;
+        String executeCmd = "sudo python python/data_generator/main.py thieptruong";
+        List<String> command = new ArrayList<String>();
+        command.add(cmd);
+        command.add(folder);
+        command.add(executeCmd);
+        return execute(command);
+    }
  }

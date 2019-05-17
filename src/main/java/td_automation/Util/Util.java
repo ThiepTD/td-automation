@@ -28,9 +28,9 @@ public class Util {
             String value = strings.get(i);
 
             if (!result.containsKey(value)) {
-                result.put(value, i);
+                result.put(value, strings.get(0) + ":" + String.valueOf(i));
             } else {
-                result.put(i, value);
+                result.put(strings.get(0) + ":" + String.valueOf(i), value);
             }
         }
         return result;
