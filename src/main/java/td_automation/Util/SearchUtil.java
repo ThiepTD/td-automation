@@ -16,7 +16,7 @@ public class SearchUtil {
         return searchMaps(srcMap, desMap);
     }
 
-    public static boolean searchMap(ArrayList<String> src, ArrayList<String> des, String myDelimiter) {
+    public static boolean searchMap(ArrayList<String> src, ArrayList<String> des) {
         HashMap<Object, Object> desMap = Util.arrayStringToMap(des, true);
         HashMap<Object, Object> srcMap = Util.arrayStringToMap(src, true);
         return searchMaps(srcMap, desMap);
@@ -37,7 +37,7 @@ public class SearchUtil {
         for (int i = 0; i < keys.length; i++) {
 
             if (!desMap.containsKey(keys[i])) {
-                LOGGER.info(String.format("--------------------------> Line %s with value %s not found !", keys[i], srcMap.get(keys[i])));
+                LOGGER.info(String.format("--------------------------> Line %s not found %s not found", keys[i], srcMap.get(keys[i])));
             } else {
                 match++;
                 desMap.remove(keys[i]);
@@ -58,7 +58,7 @@ public class SearchUtil {
 
                 if (!desMap.containsValue(values[i])) {
                     result = false;
-                    LOGGER.info(String.format("--------------------------> Line %s with value %s not found !", srcMap.get(newKeys[i]), newKeys[i]));
+                    LOGGER.info(String.format("--------------------------> Line %s not found %s", srcMap.get(newKeys[i]), newKeys[i]));
                 } else {
                     match++;
                 }

@@ -77,6 +77,23 @@ public class FileUtil {
         return result;
     }
 
+    public static List<String> getFiles(String folder, String fileName){
+        List<String> fileList = new ArrayList<String>();
+        try{
+            File[] files = new File(folder).listFiles();
+
+            for (File file : files) {
+
+                if (file.getAbsolutePath().contains(fileName)) {
+                    fileList.add(file.getAbsolutePath());
+                }
+            }
+        } catch (Exception e){
+            LOGGER.error(e.getStackTrace().toString());
+        }
+        return fileList;
+    }
+
     public static int searchRecord(String line, ArrayList<String> fileData) {
 
         try {

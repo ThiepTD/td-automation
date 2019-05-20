@@ -61,7 +61,7 @@ public class JsonUtilTest {
         desCsv = Constant.RESOURCE_PATH + "Sfdmp/csv/Result1.csv";
         ArrayList<String> srcData = (new FileUtil()).readLine(srcCsv);
         ArrayList<String> desData = (new FileUtil()).readLine(desCsv);
-        boolean result = SearchUtil.searchMap(srcData, desData, "\\^");
+        boolean result = SearchUtil.searchMap(srcData, desData);
         assertTrue(result);
     }
 

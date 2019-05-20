@@ -15,53 +15,6 @@ public class FileUtilTest {
     private String desCsv = Constant.RESOURCE_PATH + "Sfdmp/csv/destination.csv";
     public static Logger LOGGER = LogManager.getLogger(FileUtilTest.class.getName());
 
-//    @Test
-    public void fileListTest(){
-        LOGGER.info("------------- Start running fileListTest -------------");
-        srcCsv = Constant.RESOURCE_PATH + "Sfdmp/csv/media_user_data.csv";
-        desCsv = "/Users/thiep/Documents/2019-04-17";
-        ArrayList<String> srcData = (new FileUtil()).readLine(srcCsv);
-        ArrayList<ArrayList<String>> dataList = (new FileUtil()).readFolder(desCsv, "part-");
-        for (int i = 0; i < dataList.size(); i ++)
-            dataList.set(i, Util.replaceAll(Util.replaceAll(dataList.get(i), "\"", ""), "\\^", ","));
-        boolean result = FileUtil.searchRecordsInFolder(dataList, srcData);
-        assertTrue(result);
-    }
-
-    @Test
-    public void mapTest(){
-        LOGGER.info("------------- Start running mapTest -------------");
-        desCsv = Constant.RESOURCE_PATH + "Sfdmp/csv/14399983.csv";
-        srcCsv = "/Users/thiep/Documents/dc";
-        //CmdUtil.execute("gunzip", srcCsv + "/part-r*");
-        ArrayList<String> srcData = (new FileUtil()).readLine(desCsv);
-        ArrayList<ArrayList<String>> dataList = (new FileUtil()).readFolder(srcCsv, "part-");
-        boolean result = SearchUtil.searchMaps(dataList, srcData,"\\^");
-        assertTrue(result);
-    }
-
-    @Test
-    public void customMapTest(){
-        LOGGER.info("------------- Start running fileListTest -------------");
-        srcCsv = Constant.RESOURCE_PATH + "Sfdmp/csv/media_user_data.csv";
-        desCsv = "/Users/thiep/Documents/2019-04-17";
-        ArrayList<String> srcData = (new FileUtil()).readLine(srcCsv);
-        ArrayList<ArrayList<String>> dataList = (new FileUtil()).readFolder(desCsv, "part-");
-        boolean result = SearchUtil.searchMaps(dataList, srcData, "\\^");
-        assertTrue(result);
-    }
-
-    @Test
-    public void searchMapTest(){
-        LOGGER.info("------------- Start running searchMapTest -------------");
-        srcCsv = Constant.RESOURCE_PATH + "Sfdmp/csv/Result.csv";
-        desCsv = Constant.RESOURCE_PATH + "Sfdmp/csv/Result1.csv";
-        ArrayList<String> srcData = (new FileUtil()).readLine(srcCsv);
-        ArrayList<String> desData = (new FileUtil()).readLine(desCsv);
-        boolean result = SearchUtil.searchMap(srcData, desData, "\\^");
-        assertTrue(result);
-    }
-
     @Test
     public void checksumTest(){
         LOGGER.info("------------- Start running fileListTest -------------");
