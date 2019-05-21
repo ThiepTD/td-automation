@@ -25,7 +25,7 @@ public class CsvTest{
         LOGGER.info("------------- Start running detailCompareDefaultDelimiter -------------");
         srcCsv = Constant.RESOURCE_PATH + "Sfdmp/csv/1.csv";
         desCsv = Constant.RESOURCE_PATH + "Sfdmp/csv/2.csv";
-        boolean result = CsvUtil.compareCsv(srcCsv, desCsv, null);
+        boolean result = CsvUtil.compareCsv(srcCsv, desCsv, null,null);
         assertTrue(result);
     }
 
@@ -57,6 +57,7 @@ public class CsvTest{
         boolean result = SearchUtil.searchMap(srcData, desData);
         assertTrue(result);
     }
+
     @Test
     public void quickCompareUsingSearchMaps(){
         LOGGER.info("------------- Start running quickCompareUsingSearchMaps -------------");

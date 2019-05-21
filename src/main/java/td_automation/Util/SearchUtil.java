@@ -37,7 +37,7 @@ public class SearchUtil {
         for (int i = 0; i < keys.length; i++) {
 
             if (!desMap.containsKey(keys[i])) {
-                LOGGER.info(String.format("--------------------------> Line %s not found %s not found", keys[i], srcMap.get(keys[i])));
+                LOGGER.info(String.format("--------------------------> Line %s not found %s", keys[i], srcMap.get(keys[i])));
             } else {
                 match++;
                 desMap.remove(keys[i]);

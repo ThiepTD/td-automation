@@ -199,46 +199,4 @@ public class FileUtil {
         }
         return jsonObject;
     }
-/*
-    public static boolean mergeFile(String folder, String fileExpression, String outputFile) {
-        boolean result = true;
-        try {
-            Path output = Paths.get(outputFile);
-            Path directory = Paths.get(folder);
-            Stream<Path> filesToProcess = Files.list(directory);
-
-            // Iterate all files
-            filesToProcess.forEach(path -> {
-                try {
-                    // Get all lines of that file
-                    Stream<String> lines = Files.lines(path);
-
-                    // Iterate all lines
-                    lines.forEach(line -> {
-
-                        // Append the line separator
-                        String lineToWrite = line + System.lineSeparator();
-                        try {
-
-                            // Write every line to the output file
-                            Files.write(output, lineToWrite.getBytes(StandardCharsets.UTF_8));
-                        } catch (IOException e){
-                            LOGGER.error(e.toString());
-                        }
-                    });
-                } catch (IOException e){
-                    LOGGER.error(e.toString());
-                }
-            });
-        } catch (IOException e){
-            LOGGER.error(e.toString());
-            result = false;
-        } catch (Exception e){
-            LOGGER.error(e.toString());
-            result = false;
-        }
-        return result;
-    }
-*/
-
 }

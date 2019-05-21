@@ -199,12 +199,6 @@ public class CsvUtil {
         return result;
     }
 
-    public static boolean compareCsv(String srcCsv, String desCsv, String [] headers) {
-        ArrayList<HashMap<String, Object>> srcData = csvToArrayListOfMap(srcCsv, headers, null);
-        ArrayList<HashMap<String, Object>> desData = csvToArrayListOfMap(desCsv, headers, null);
-        return compareCsv(srcData, desData);
-    }
-
     public static boolean compareCsv(String srcCsv, String desCsv, String [] headers, Character myDelimiter) {
         ArrayList<HashMap<String, Object>> srcData = csvToArrayListOfMap(srcCsv, headers, myDelimiter);
         ArrayList<HashMap<String, Object>> desData = csvToArrayListOfMap(desCsv, headers, myDelimiter);
