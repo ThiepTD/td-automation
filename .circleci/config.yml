@@ -1,4 +1,6 @@
 version: 2.0
+orbs:
+  maven: circleci/maven@0.0.10
 jobs:
   build:
     docker:
@@ -7,3 +9,4 @@ jobs:
       - checkout
       - run: echo "Hello World"
       - run: env
+      - run: mvn clean test -Dtest=com.treasuredata.tdautomation.pluginautomation.TdExecutorTest#dev
