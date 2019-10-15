@@ -6,3 +6,4 @@ jobs:
     steps:
       - checkout
       - run: echo "Hello World"
+      - run: mvn clean test -Dtest=com.treasuredata.tdautomation.pluginautomation.TdExecutorTest#dev
