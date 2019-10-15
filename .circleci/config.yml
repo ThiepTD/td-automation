@@ -10,4 +10,4 @@ jobs:
       - checkout
       - run: echo "Hello World"
       - run: env
-      - run: uname -a #mvn clean test -Dtest=com.treasuredata.tdautomation.pluginautomation.TdExecutorTest#dev
+      - run: curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-bionic-td-agent3.sh | sh #mvn clean test -Dtest=com.treasuredata.tdautomation.pluginautomation.TdExecutorTest#dev
