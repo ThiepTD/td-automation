@@ -1,8 +1,14 @@
-version: 2
- jobs:
-   build:
-     docker:
-       - image: circleci/ruby:2.4.1
-     steps:
-       - checkout master
-       - run: echo "A first hello"
+
+version: 2.0
+
+jobs:
+  build:
+    docker:
+    - image: circleci/ruby:2.4.1
+      environment:
+        RAILS_ENV: circle_test
+
+    steps:
+    - checkout master
+    - run: echo "A first hello"
+        name: Checkout develop/master branch
