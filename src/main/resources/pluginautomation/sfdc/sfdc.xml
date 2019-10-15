@@ -1,0 +1,117 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<suite name="sfdc">
+    <parameter name="tdConfig" value="dev"/>
+
+    <!-- use_rest = true -->
+    <test name = "SfdcInputLastRecord">
+        <parameter name="v1YmlFile" value="src/main/resources/pluginautomation/sfdc/yml/v1lastRecord.yml"/>
+        <parameter name="v2YmlFile" value="src/main/resources/pluginautomation/sfdc/yml/v2lastRecord.yml"/>
+        <parameter name="query" value="select myid__c, percent__c, double__c, checkbox__c, date__c, datetime__c, time__c, currency__c, phone__c, email__c, text_long__c, integer__c, long__c, address__c from %s"/>
+        <parameter name="v1Table" value="v1lastrecord"/>
+        <parameter name="v2Table" value="v2lastrecord"/>
+        <classes>
+            <class name = "com.treasuredata.tdautomation.pluginautomation.sfdc.SfdcInputBackwardCompatible"/>
+        </classes>
+    </test>
+
+    <test name = "SfdcDeletedRecord">
+        <parameter name="v1YmlFile" value="src/main/resources/pluginautomation/sfdc/yml/v1deletedRecord.yml"/>
+        <parameter name="v2YmlFile" value="src/main/resources/pluginautomation/sfdc/yml/v2deletedRecord.yml"/>
+        <parameter name="query" value="select myid__c, percent__c, double__c, checkbox__c, date__c, datetime__c, time__c, currency__c, phone__c, email__c, text_long__c, integer__c, long__c, address__c from %s"/>
+        <parameter name="v1Table" value="v1deletedrecord"/>
+        <parameter name="v2Table" value="v2deletedrecord"/>
+        <classes>
+            <class name = "com.treasuredata.tdautomation.pluginautomation.sfdc.SfdcInputBackwardCompatible"/>
+        </classes>
+    </test>
+
+    <test name = "SfdcInputUnsupportedKeyword">
+        <parameter name="v1YmlFile" value="src/main/resources/pluginautomation/sfdc/yml/v1unsupportedKeyword.yml"/>
+        <parameter name="v2YmlFile" value="src/main/resources/pluginautomation/sfdc/yml/v2unsupportedKeyword.yml"/>
+        <parameter name="query" value="select count() from %s"/>
+        <parameter name="v1Table" value="v1unsupportedkeyword"/>
+        <parameter name="v2Table" value="v2unsupportedobject"/>
+        <classes>
+            <class name = "com.treasuredata.tdautomation.pluginautomation.sfdc.SfdcInputBackwardCompatible"/>
+        </classes>
+    </test>
+
+    <test name = "SfdcInputUnsupportedObject">
+        <parameter name="v1YmlFile" value="src/main/resources/pluginautomation/sfdc/yml/v1unsupportedObject.yml"/>
+        <parameter name="v2YmlFile" value="src/main/resources/pluginautomation/sfdc/yml/v2unsupportedObject.yml"/>
+        <parameter name="query" value="select Id, apiname, sortorder from %s"/>
+        <parameter name="v1Table" value="v1unsupportedobject"/>
+        <parameter name="v2Table" value="v2unsupportedobject"/>
+        <classes>
+            <class name = "com.treasuredata.tdautomation.pluginautomation.sfdc.SfdcInputBackwardCompatible"/>
+        </classes>
+    </test>
+
+    <test name = "SfdcInputStandardObject">
+        <parameter name="v1YmlFile" value="src/main/resources/pluginautomation/sfdc/yml/v1StandardObject.yml"/>
+        <parameter name="v2YmlFile" value="src/main/resources/pluginautomation/sfdc/yml/v2StandardObject.yml"/>
+        <parameter name="query" value="SELECT name, accountnumber, ownerid, active_c, site, accountSource, AnnualRevenue, BillingAddress, CleanStatus, CreatedById, CustomerPriority_c, DandbCompanyId, DunsNumber, Jigsaw, Description, NumberOfEmployees, Fax, Industry, LastModifiedById, NaicsCode, NaicsDesc, NumberofLocations_c, Ownership, ParentId, Phone, Rating, ShippingAddress, Sic, SicDesc, SLA_c, SLAExpirationDate_c, SLASerialNumber_c, TickerSymbol, Tradestyle, Type, UpsellOpportunity_c, Website, YearStarted from %s"/>
+        <parameter name="v1Table" value="v1standardobject"/>
+        <parameter name="v2Table" value="v2standardobject"/>
+        <classes>
+            <class name = "com.treasuredata.tdautomation.pluginautomation.sfdc.SfdcInputBackwardCompatible"/>
+        </classes>
+    </test>
+
+    <!-- use_rest = false -->
+    <test name = "SfdcInputLastRecordBulk">
+        <parameter name="v1YmlFile" value="src/main/resources/pluginautomation/sfdc/yml/v1lastRecord.yml"/>
+        <parameter name="v2YmlFile" value="src/main/resources/pluginautomation/sfdc/yml/v2lastRecordBulk.yml"/>
+        <parameter name="query" value="select myid__c, percent__c, double__c, checkbox__c, geolocation__c, date__c, datetime__c, time__c, currency__c, phone__c, email__c, text_long__c, integer__c, long__c, address__c from %s"/>
+        <parameter name="v1Table" value="v1lastrecordBulk"/>
+        <parameter name="v2Table" value="v2lastrecordBulk"/>
+        <classes>
+            <class name = "com.treasuredata.tdautomation.pluginautomation.sfdc.SfdcInputBackwardCompatible"/>
+        </classes>
+    </test>
+
+    <test name = "SfdcDeletedRecordBulk">
+        <parameter name="v1YmlFile" value="src/main/resources/pluginautomation/sfdc/yml/v1deletedRecord.yml"/>
+        <parameter name="v2YmlFile" value="src/main/resources/pluginautomation/sfdc/yml/v2deletedRecordBulk.yml"/>
+        <parameter name="query" value="select myid__c, percent__c, double__c, checkbox__c, geolocation__c, date__c, datetime__c, time__c, currency__c, phone__c, email__c, text_long__c, integer__c, long__c, address__c from %s"/>
+        <parameter name="v1Table" value="v1deletedrecordBulk"/>
+        <parameter name="v2Table" value="v2deletedrecordBulk"/>
+        <classes>
+            <class name = "com.treasuredata.tdautomation.pluginautomation.sfdc.SfdcInputBackwardCompatible"/>
+        </classes>
+    </test>
+
+    <test name = "SfdcInputUnsupportedKeywordBulk">
+        <parameter name="v1YmlFile" value="src/main/resources/pluginautomation/sfdc/yml/v1unsupportedKeyword.yml"/>
+        <parameter name="v2YmlFile" value="src/main/resources/pluginautomation/sfdc/yml/v2unsupportedKeywordBulk.yml"/>
+        <parameter name="query" value="select count() from %s"/>
+        <parameter name="v1Table" value="v1unsupportedkeywordBulk"/>
+        <parameter name="v2Table" value="v2unsupportedobjectBulk"/>
+        <classes>
+            <class name = "com.treasuredata.tdautomation.pluginautomation.sfdc.SfdcInputBackwardCompatible"/>
+        </classes>
+    </test>
+
+    <test name = "SfdcInputUnsupportedObjectBulk">
+        <parameter name="v1YmlFile" value="src/main/resources/pluginautomation/sfdc/yml/v1unsupportedObject.yml"/>
+        <parameter name="v2YmlFile" value="src/main/resources/pluginautomation/sfdc/yml/v2unsupportedObjectBulk.yml"/>
+        <parameter name="query" value="select Id, apiname, sortorder from %s"/>
+        <parameter name="v1Table" value="v1unsupportedobjectBulk"/>
+        <parameter name="v2Table" value="v2unsupportedobjectBulk"/>
+        <classes>
+            <class name = "com.treasuredata.tdautomation.pluginautomation.sfdc.SfdcInputBackwardCompatible"/>
+        </classes>
+    </test>
+
+    <test name = "SfdcInputStandardObjectBulk">
+        <parameter name="v1YmlFile" value="src/main/resources/pluginautomation/sfdc/yml/v1StandardObject.yml"/>
+        <parameter name="v2YmlFile" value="src/main/resources/pluginautomation/sfdc/yml/v2StandardObjectBulk.yml"/>
+        <parameter name="query" value="SELECT name, accountnumber, ownerid, active_c, site, accountSource, AnnualRevenue, BillingAddress, CleanStatus, CreatedById, CustomerPriority_c, DandbCompanyId, DunsNumber, Jigsaw, Description, NumberOfEmployees, Fax, Industry, LastModifiedById, NaicsCode, NaicsDesc, NumberofLocations_c, Ownership, ParentId, Phone, Rating, ShippingAddress, Sic, SicDesc, SLA_c, SLAExpirationDate_c, SLASerialNumber_c, TickerSymbol, Tradestyle, Type, UpsellOpportunity_c, Website, YearStarted from %s"/>
+        <parameter name="v1Table" value="v1standardobjectBulk"/>
+        <parameter name="v2Table" value="v2standardobjectBulk"/>
+        <classes>
+            <class name = "com.treasuredata.tdautomation.pluginautomation.sfdc.SfdcInputBackwardCompatible"/>
+        </classes>
+    </test>
+
+</suite>

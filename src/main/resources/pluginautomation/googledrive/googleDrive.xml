@@ -1,0 +1,301 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="googleDrive">
+    <parameter name="env" value="dev"/>
+    <test name = "csvFileUpload">
+        <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+        <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_csv.yml"/>
+        <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+        <parameter name="fileName" value="output.csv"></parameter>
+        <classes>
+            <class name = "com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveCsvImport"/>
+        </classes>
+    </test>
+   <test name = "tsvFileUpload">
+        <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/tsv/output.tsv"/>
+        <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_tsv.yml"/>
+        <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/tsv/target.tsv"/>
+        <parameter name="fileName" value="output.tsv"></parameter>
+        <classes>
+            <class name = "com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveTsvImport"/>
+        </classes>
+    </test>
+    <test name = "gzipFileUpload">
+        <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+        <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_gz.yml"/>
+        <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+        <parameter name="fileName" value="output.csv"></parameter>
+        <classes>
+            <class name = "com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveGzipImport"/>
+        </classes>
+    </test>
+   <test name = "pngFileUpload">
+        <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/png/image.png"/>
+        <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_csv.yml"/>
+        <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+        <parameter name="fileName" value="output.csv"></parameter>
+        <classes>
+            <class name = "com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDrivePngImport"/>
+        </classes>
+    </test>
+    <test name = "csvFilesFromfolder">
+         <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+         <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_folder.yml"/>
+         <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+         <parameter name="fileName" value="output.csv"></parameter>
+         <classes>
+             <class name = "com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveCsvFilesFromFolder"/>
+         </classes>
+     </test>
+     <test name = "tsvFilesFromFolder">
+         <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/tsv/output.tsv"/>
+         <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_folder_tsv.yml"/>
+         <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/tsv/target.tsv"/>
+         <parameter name="fileName" value="output.tsv"></parameter>
+         <classes>
+             <class name = "com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveTSVFilesFromFolder"/>
+         </classes>
+     </test>
+    <test name = "gzipFilesFromFolder">
+        <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+        <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_gz_folder.yml"/>
+        <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+        <parameter name="fileName" value="output.csv"></parameter>
+        <classes>
+            <class name = "com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveGzipFilesFromFolder"/>
+        </classes>
+    </test>
+    <test name = "mixFormat">
+        <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+        <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_mix_formats.yml"/>
+        <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+        <parameter name="fileName" value="output.csv"></parameter>
+        <classes>
+            <class name = "com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveMixFormat"/>
+        </classes>
+    </test>
+    <test name = "mixSchema">
+        <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+        <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_folder.yml"/>
+        <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+        <parameter name="fileName" value="output.csv"></parameter>
+        <classes>
+            <class name = "com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveMixSchema"/>
+        </classes>
+    </test>
+     <test name = "unSupportedMixFormat">
+         <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+         <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_mix_formats.yml"/>
+         <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+         <parameter name="fileName" value="output.csv"></parameter>
+         <classes>
+             <class name = "com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveUnsupportedMixFormat"/>
+         </classes>
+     </test>
+    <test name = "fileIncrementalAppend">
+         <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+         <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_append.yml"/>
+         <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+         <classes>
+             <class name = "com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveFileIncrementalAppend"/>
+         </classes>
+     </test>
+     <test name = "fileIncrementalReplace">
+         <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+         <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_replace.yml"/>
+         <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+         <classes>
+             <class name = "com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveFileIncrementalReplace"/>
+         </classes>
+     </test>
+     <test name = "fileIncrementalDeletedFile">
+         <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+         <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_replace.yml"/>
+         <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+         <classes>
+             <class name = "com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveFileIncrementalDeletedFile"/>
+         </classes>
+     </test>
+     <test name = "fileIncrementalModifiedTime">
+         <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+         <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_append_modified.yml"/>
+         <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+         <classes>
+             <class name = "com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveFileIncrementalModifiedTime"/>
+         </classes>
+     </test>
+     <test name = "fileIncrementalSchemaChanged">
+         <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+         <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_append_modified.yml"/>
+         <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+         <classes>
+             <class name = "com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveFileIncrementalSchemaChanged"/>
+         </classes>
+     </test>
+     <test name = "folderIncrementalAppend">
+         <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+         <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_folder_append.yml"/>
+         <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+         <classes>
+             <class name = "com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveFolderIncrementalAppend"/>
+         </classes>
+     </test>
+     <test name = "folderIncrementalReplace">
+         <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+         <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_folder_replace.yml"/>
+         <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+         <classes>
+             <class name = "com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveFolderIncrementalReplace"/>
+         </classes>
+     </test>
+     <test name = "folderIncrementalDeletedFile">
+         <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+         <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_folder_append.yml"/>
+         <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+         <classes>
+             <class name = "com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveFolderIncrementalDeletedFiles"/>
+         </classes>
+     </test>
+     <test name = "folderIncrementalModifiedTime">
+         <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+         <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_append_folder_modified.yml"/>
+         <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+         <classes>
+             <class name = "com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveFolderIncrementalModifiedTime"/>
+         </classes>
+     </test>
+     <test name = "folderIncrementalSchemaChanged">
+         <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+         <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_folder_append.yml"/>
+         <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+         <classes>
+             <class name = "com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveFolderIncrementalSchemaChanged"/>
+         </classes>
+     </test>
+     <test name = "emptyFile">
+         <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+         <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_empty_file.yml"/>
+         <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+         <parameter name="fileName" value="output.csv"></parameter>
+         <classes>
+             <class name = "com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveEmptyFile"/>
+         </classes>
+    </test>
+    <test name = "emptyFolder">
+        <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+        <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_empty_folder.yml"/>
+        <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+        <parameter name="fileName" value="output.csv"></parameter>
+        <classes>
+            <class name = "com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveEmptyFolder"/>
+        </classes>
+    </test>
+    <test name = "patternFilter">
+        <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+        <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_pattern.yml"/>
+        <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+        <parameter name="fileName" value="output.csv"></parameter>
+        <classes>
+            <class name = "com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDrivePatternFilter"/>
+        </classes>
+    </test>
+    <test name = "modifiedAfterFile">
+        <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+        <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_modified_file.yml"/>
+        <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+        <parameter name="fileName" value="output.csv"></parameter>
+        <classes>
+            <class name = "com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveModifiedAfterFile"/>
+        </classes>
+    </test>
+    <test name = "modifiedAfterFolder">
+        <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+        <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_modified_folder.yml"/>
+        <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+        <parameter name="fileName" value="output.csv"></parameter>
+        <classes>
+            <class name = "com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveModifiedAfterFolder"/>
+        </classes>
+    </test>
+   <test name="differentTypeData">
+       <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+       <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_diff_dataTypes.yml"/>
+       <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+       <parameter name="fileName" value="output.csv"></parameter>
+       <classes>
+           <class name="com.treasuredata.tdautomation.pluginautomation.googledrive.ImportDifferentTypesData"/>
+       </classes>
+   </test>
+   <test name="randomCells">
+       <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+       <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/empty_cells.yml"/>
+       <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+       <parameter name="fileName" value="output.csv"></parameter>
+       <classes>
+           <class name="com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveRandomCellsImport"/>
+       </classes>
+   </test>
+   <test name="sharedWithmeFile">
+       <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+       <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_csv.yml"/>
+       <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+       <parameter name="fileName" value="output.csv"></parameter>
+       <parameter name="email" value="parul.saran@treasure-data.com"></parameter>
+       <classes>
+           <class name="com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveSharedWithMeFiles"/>
+       </classes>
+   </test>
+   <test name="sharedWithmeFolder">
+       <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+       <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_folder.yml"/>
+       <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+       <parameter name="fileName" value="output.csv"></parameter>
+       <parameter name="email" value="parul.saran@treasure-data.com"></parameter>
+       <classes>
+           <class name="com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveSharedWithMeFolder"/>
+       </classes>
+   </test>
+   <test name="deletedFileImport">
+       <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+       <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_csv.yml"/>
+       <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+       <parameter name="fileName" value="output.csv"></parameter>
+       <classes>
+           <class name="com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveDeletedFileImport"/>
+       </classes>
+   </test>
+   <test name="deletedFolderImport">
+       <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+       <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_folder.yml"/>
+       <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+       <parameter name="fileName" value="output.csv"></parameter>
+       <classes>
+           <class name="com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveDeletedFolderImport"/>
+       </classes>
+   </test>
+   <test name="clonedFilerImport">
+       <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+       <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_folder_append.yml"/>
+       <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+       <classes>
+           <class name="com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveClonedFileFolderIncremental"/>
+       </classes>
+   </test>
+   <test name="movedFilerImport">
+       <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+       <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_folder_append.yml"/>
+       <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+       <classes>
+           <class name="com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveMovedFileFolderIncremental"/>
+       </classes>
+   </test>
+   <test name="verifyAuthentication">
+       <parameter name="sourceFile" value="src/main/resources/pluginautomation/googleDrive/csv/output.csv"/>
+       <parameter name="ymlFile" value="src/main/resources/pluginautomation/googleDrive/yml/load_csv.yml"/>
+       <parameter name="targetFile" value="src/main/resources/pluginautomation/googleDrive/csv/target.csv"/>
+       <parameter name="fileName" value="output.csv"></parameter>
+       <classes>
+           <class name="com.treasuredata.tdautomation.pluginautomation.googledrive.GoogleDriveVerifyAuthentication"/>
+       </classes>
+   </test>
+ </suite>

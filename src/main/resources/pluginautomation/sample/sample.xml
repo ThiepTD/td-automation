@@ -1,0 +1,9 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<suite name="sfdc">
+    <parameter name="tdConfig" value="dev"/>
+    <test name = "sfdc">
+        <classes>
+            <class name = "com.treasuredata.tdautomation.pluginautomation.sfdc.SfdcInputBackwardCompatible"/>
+        </classes>
+    </test>
+</suite>

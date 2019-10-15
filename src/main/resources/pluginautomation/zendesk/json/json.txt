@@ -1,0 +1,152 @@
+{
+	"tickets": [
+		{
+			"url": "https://treasuredata.zendesk.com/api/v2/tickets/38444.json",
+			"id": 38444,
+			"external_id": null,
+			"via": {
+				"channel": "web",
+				"source": {
+					"from": {},
+					"to": {},
+					"rel": "web_widget"
+				}
+			},
+			"created_at": "2019-04-20T21:31:53Z",
+			"updated_at": "2019-05-01T01:01:48Z",
+			"type": null,
+			"subject": "hi, \nI have basicly question.\n\n1.Can I exe query b...",
+			"raw_subject": "hi, \nI have basicly question.\n\n1.Can I exe query b...",
+			"description": "hi, \nI have basicly question.\n\n1.Can I exe query between database on TD?\n\nlike aaa database and bbb database inner join.\n\nTD内の異なるデータベースで、データをjoinさせることは可能ですか？\n\n2.Can I exe query that move table to other database?\n\nlike move aaa.action table to bbb.action2 table.\n\nTD内で異なるデータベースからバッチ処理で別のデータベースのテーブルへ移動することは可能ですか？\n\n------------------\n送信元: https://console.treasuredata.com/app/queries/editor",
+			"priority": null,
+			"status": "pending",
+			"recipient": null,
+			"requester_id": 365390284228,
+			"submitter_id": 365390284228,
+			"assignee_id": 1098710047,
+			"organization_id": 360085669773,
+			"group_id": 25879637,
+			"collaborator_ids": [],
+			"follower_ids": [],
+			"email_cc_ids": [],
+			"forum_topic_id": null,
+			"problem_id": null,
+			"has_incidents": false,
+			"is_public": true,
+			"due_at": null,
+			"tags": [
+				"datacenter_aws",
+				"web_widget"
+			],
+			"custom_fields": [{
+					"id": 80429327,
+					"value": null
+				},
+				{
+					"id": 81568788,
+					"value": null
+				},
+				{
+					"id": 77496087,
+					"value": null
+				},
+				{
+					"id": 81568808,
+					"value": null
+				},
+				{
+					"id": 77984587,
+					"value": null
+				},
+				{
+					"id": 360000277327,
+					"value": "1175"
+				},
+				{
+					"id": 360000277347,
+					"value": "1175"
+				},
+				{
+					"id": 360000448128,
+					"value": null
+				},
+				{
+					"id": 360000047248,
+					"value": null
+				},
+				{
+					"id": 26703268,
+					"value": false
+				},
+				{
+					"id": 32334037,
+					"value": null
+				},
+				{
+					"id": 27013087,
+					"value": null
+				}
+			],
+			"satisfaction_rating": {
+				"score": "unoffered"
+			},
+			"sharing_agreement_ids": [],
+			"fields": [{
+					"id": 80429327,
+					"value": null
+				},
+				{
+					"id": 81568788,
+					"value": null
+				},
+				{
+					"id": 77496087,
+					"value": null
+				},
+				{
+					"id": 81568808,
+					"value": null
+				},
+				{
+					"id": 77984587,
+					"value": null
+				},
+				{
+					"id": 360000277327,
+					"value": "1175"
+				},
+				{
+					"id": 360000277347,
+					"value": "1175"
+				},
+				{
+					"id": 360000448128,
+					"value": null
+				},
+				{
+					"id": 360000047248,
+					"value": null
+				},
+				{
+					"id": 26703268,
+					"value": false
+				},
+				{
+					"id": 32334037,
+					"value": null
+				},
+				{
+					"id": 27013087,
+					"value": null
+				}
+			],
+			"followup_ids": [],
+			"ticket_form_id": 166578,
+			"brand_id": 381217,
+			"satisfaction_probability": null,
+			"allow_channelback": false,
+			"allow_attachments": true,
+			"generated_timestamp": 1556672508
+		}
+	]
+}

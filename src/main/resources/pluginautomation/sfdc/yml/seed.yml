@@ -1,0 +1,12 @@
+in:
+  type: sfdc
+  username: %s
+  password: %s
+  security_token: %s
+  client_id: %s
+  client_secret: %s
+  login_url: https://login.salesforce.com/
+  incremental: false                       # 'full dump', see Scheduled execution below
+  target: TypeConversion__c                          # Salesforce Object you want to import
+out:
+  mode: replace

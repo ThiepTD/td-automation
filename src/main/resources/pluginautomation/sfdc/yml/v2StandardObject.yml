@@ -1,0 +1,19 @@
+---
+in:
+  type: sfdc_v2
+  username: %s
+  password: %s
+  security_token: %s
+  client_id: %s
+  client_secret: %s
+  login_url: https://login.salesforce.com/
+  use_rest: true
+  incremental: false
+  soql: SELECT name, accountnumber, ownerid, active__c, site, accountSource, AnnualRevenue, BillingAddress, CleanStatus, CreatedById, CustomerPriority__c, DandbCompanyId, DunsNumber, Jigsaw, Description, NumberOfEmployees, Fax, Industry, LastModifiedById, NaicsCode, NaicsDesc, NumberofLocations__c, Ownership, ParentId, Phone, Rating, ShippingAddress, Sic, SicDesc, SLA__c, SLAExpirationDate__c, SLASerialNumber__c, TickerSymbol, Tradestyle, Type, UpsellOpportunity__c, Website, YearStarted from Account
+  target: Account
+out: {mode: append}
+exec: {}
+filters:
+  - from_value: {mode: upload_time}
+    to_column: {name: time}
+    type: add_time

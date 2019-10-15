@@ -1,0 +1,13 @@
+in:
+  type: sfdc_v2
+  username: %s							                                                # your username
+  password: %s                     									                                    # your password
+  security_token: %s        							                                    # your Security Token
+  client_id: %s                # your app's consumer key
+  client_secret: %s           								                                    # your app's consumer secret
+  login_url: https://login.salesforce.com/ 									                                        # test.salesforce.com for sandbox
+  incremental: false                       									                                        # 'full dump', see Scheduled execution below
+  soql: "select id__c, name__c, age__c, email__c, time__c from TestObject__c"
+  target: TestObject__c									                                                            # Salesforce Object you want to import
+out:
+  mode: append

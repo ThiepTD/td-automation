@@ -1,0 +1,32 @@
+---
+in:
+  type: sfdc
+  username: %s
+  password: %s
+  security_token: %s
+  client_id: %s
+  client_secret: %s
+  login_url: https://login.salesforce.com/
+  incremental: false
+  target: TypeConversion__c
+out: {mode: replace}
+exec: {}
+filters:
+- rules:
+  - {rule: upper_to_lower}
+  - pass_types:
+    - a-z
+    - 0-9
+    pass_characters: _
+    replace: _
+    rule: character_types
+  - pass_types:
+    - a-z
+    pass_characters: _
+    prefix: _
+    rule: first_character_types
+  - {rule: unique_number_suffix, max_length: 128}
+  type: rename
+- from_value: {mode: upload_time}
+  to_column: {name: time}
+  type: add_time

@@ -1,0 +1,19 @@
+---
+in:
+  type: sfdc
+  username: %s
+  password: %s
+  security_token: %s
+  client_id: %s
+  client_secret: %s
+  login_url: https://login.salesforce.com/
+  incremental: false
+  include_deleted_records: true
+  soql: select id__c, name__c, age__c, email__c, date__c, mytime__c from TestObject__c
+  target: TestObject__c
+out: {mode: append}
+exec: {}
+filters:
+  - from_value: {mode: upload_time}
+    to_column: {name: time}
+    type: add_time

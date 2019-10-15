@@ -1,0 +1,18 @@
+---
+in:
+  type: sfdc
+  username: %s
+  password: %s
+  security_token: %s
+  client_id: %s
+  client_secret: %s
+  login_url: https://login.salesforce.com/
+  incremental: false
+  soql: select count() from TypeConversion__c
+  target: TypeConversion__c
+out: {mode: append}
+exec: {}
+filters:
+  - from_value: {mode: upload_time}
+    to_column: {name: time}
+    type: add_time

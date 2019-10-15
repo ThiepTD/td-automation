@@ -1,0 +1,29 @@
+in: 
+   type: one_drive
+   refresh_token: "%s"
+   client_id: %s
+   client_secret: '%s'
+   folder_path: /auto_test_do_not_delete
+   account_type: personal
+   incremental: false
+   name_match_pattern: common.csv
+   parser: 
+      type: csv
+      skip_header_lines: 1
+      columns:
+         - name: Queries
+           type: string
+         - name: Clicks
+           type: long
+         - name: Impressions
+           type: long
+         - name: CTR
+           type: string
+         - name: Position
+           type: double
+         - name: time
+           type: long
+out: 
+   type: td_internal
+   default_timezone: UTC
+   mode: append

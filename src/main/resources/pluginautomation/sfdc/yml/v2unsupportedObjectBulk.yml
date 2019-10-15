@@ -1,0 +1,19 @@
+---
+in:
+  type: sfdc_v2
+  username: %s
+  password: %s
+  security_token: %s
+  client_id: %s
+  client_secret: %s
+  login_url: https://login.salesforce.com/
+  use_rest: false
+  incremental: false
+  soql: SELECT Id, apiname, sortorder FROM PartnerRole
+  target: PartnerRole
+out: {mode: append}
+exec: {}
+filters:
+  - from_value: {mode: upload_time}
+    to_column: {name: time}
+    type: add_time

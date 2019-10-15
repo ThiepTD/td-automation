@@ -1,0 +1,20 @@
+---
+in:
+  type: sfdc_v2
+  username: %s
+  password: %s
+  security_token: %s
+  client_id: %s
+  client_secret: %s
+  login_url: https://login.salesforce.com/
+  incremental: true
+  incremental_columns:
+    - myid__c
+  soql: select myid__c, checkbox__c, percent__c, double__c, date__c, datetime__c, time__c, currency__c, phone__c, email__c, text_long__c, integer__c, long__c, address__c from TypeConversion__c
+  target: TypeConversion__c
+out: {mode: append}
+exec: {}
+filters:
+  - from_value: {mode: upload_time}
+    to_column: {name: time}
+    type: add_time

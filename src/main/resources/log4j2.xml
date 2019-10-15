@@ -21,19 +21,26 @@
         </RollingFile>
     </Appenders>
     <Loggers>
-        <Logger name="td_automation.plugin_automation" level="info" additivity="false">
+        <Logger name="com.treasuredata.tdautomation.pluginautomation" level="info" additivity="false">
             <AppenderRef ref="LogToConsole"/>
             <AppenderRef ref="LogToRollingFile"/>
         </Logger>
 
-        <Logger name="td_automation.rest_assured" level="info" additivity="false">
+        <Logger name="com.treasuredata.tdautomation.restassured" level="info" additivity="false">
             <AppenderRef ref="LogToConsole"/>
             <AppenderRef ref="LogToRollingFile"/>
         </Logger>
-        <Logger name="td_automation.Util" level="debug" additivity="false">
+
+        <Logger name="com.treasuredata.tdautomation.util" level="debug" additivity="false">
             <AppenderRef ref="LogToConsole"/>
             <AppenderRef ref="LogToRollingFile"/>
         </Logger>
+
+        <Logger name="TestCaseBase" level="info" additivity="false">
+            <AppenderRef ref="LogToConsole"/>
+            <AppenderRef ref="LogToRollingFile"/>
+        </Logger>
+
         <Root level="error">
             <AppenderRef ref="LogToRollingFile"/>
             <AppenderRef ref="LogToConsole"/>

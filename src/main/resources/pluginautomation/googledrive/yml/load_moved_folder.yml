@@ -1,0 +1,28 @@
+in:
+  type: google_drive
+  refresh_token:
+  client_id:
+  client_secret:
+  target: folder
+  id: 1cv5RdDuEinlIcffh1rhzIs2HqA2l6lHI
+  last_modified_time: '2019-08-06 19:57:39'
+  incremental: true
+  parser:
+    charset: UTF-8
+    newline: LF
+    type: csv
+    delimiter: ','
+    quote: '"'
+    escape: '"'
+    trim_if_not_quoted: false
+    skip_header_lines: 1
+    allow_extra_columns: false
+    allow_optional_columns: false
+    columns:
+      - {name: id, type: long}
+      - {name: name, type: string}
+      - {name: email,type: string }
+      - {name: age, type: long}
+      - {name: date, type: timestamp, format: "%Y-%m-%d" }
+      - {name: mytime, type: string}
+out: {mode: append}

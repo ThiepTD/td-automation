@@ -1,0 +1,11 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<suite name="onedrive">
+    <parameter name="env" value="dev"/>
+    <test name = "onedrivebasic">
+        <parameter name="sourceTestData" value="src/main/resources/pluginautomation/onedrive/csv/sample.csv"/>
+        <parameter name="ymlFile" value="src/main/resources/pluginautomation/onedrive/yml/load.yml"/>
+        <classes>
+            <class name = "com.treasuredata.tdautomation.pluginautomation.onedrive.OneDriveInput"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,18 @@
+in: 
+   type: one_drive
+   refresh_token: "%s"
+   client_id: %s
+   client_secret: '%s'
+   folder_path: /auto_test_do_not_delete
+   account_type: personal
+   incremental: false
+   name_match_pattern: common.csv
+   parser: 
+      type: csv
+      skip_header_lines: 1
+      columns:
+Parul will add columns names & types here at run time
+out: 
+   type: td_internal
+   default_timezone: UTC
+   mode: append

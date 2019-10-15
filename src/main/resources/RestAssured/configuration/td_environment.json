@@ -1,0 +1,21 @@
+{
+  "developmentAws": {
+    "baseUrl": "https://api-development.treasuredata.com",
+    "apiKey": null
+  },
+  "stagingAws": {
+    "baseUrl": "https://api-staging.treasuredata.com",
+    "ApiKey": null
+  },
+  "productionAws": {
+    "baseUrl": "https://api.treasuredata.com",
+    "ApiKey": null
+  },
+  "apiList": {
+    "dbList": "/v3/database/list",
+    "accList": "/v4/account",
+    "createDb": "/v3/database/create/",
+    "deleteDb": "/v3/database/delete/",
+    "tableImport": "/v3/table/import/"
+  }
+}

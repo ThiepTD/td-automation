@@ -1,0 +1,36 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<suite name="td2td">
+    <parameter name="tdConfig" value="dev"/>
+
+    <test name = "Td2Td-Replace">
+        <!-- The first and second query are identical-->
+        <parameter name="targetEnv" value="dev-eu01"/>
+        <parameter name="targetDb" value="td2td"/>
+        <parameter name="firstQuery" value="select myid__c, percent__c, double__c, checkbox__c, date__c, datetime__c, time__c, currency__c, phone__c, email__c, integer__c, long__c, address__c from %s"/>
+        <parameter name="secondQuery" value="select myid__c, percent__c, double__c, checkbox__c, date__c, datetime__c, time__c, currency__c, phone__c, email__c, integer__c, long__c, address__c from %s"/>
+        <parameter name="tdSourceTable" value="type_conversion"/>
+        <parameter name="tdTargetTable" value="replace_mode"/>
+        <parameter name="mode" value="replace"/>
+        <parameter name="timeValue" value="null"/>
+        <parameter name="engine" value="presto"/>
+        <classes>
+            <class name = "com.treasuredata.tdautomation.pluginautomation.td2td.Td2tdOutputBasic"/>
+        </classes>
+    </test>
+    <test name = "Td2Td-Append">
+        <!-- The first and second query are different but the same column time__c -->
+        <parameter name="targetEnv" value="dev-eu01"/>
+        <parameter name="targetDb" value="td2td"/>
+        <parameter name="firstQuery" value="select myid__c, percent__c, double__c, checkbox__c, date__c, datetime__c, time__c from %s limit 5"/>
+        <parameter name="secondQuery" value="select time__c, currency__c, phone__c, email__c, integer__c, long__c, address__c from %s limit 5"/>
+        <parameter name="tdSourceTable" value="type_conversion"/>
+        <parameter name="tdTargetTable" value="append_mode"/>
+        <parameter name="mode" value="append"/>
+        <parameter name="timeValue" value="null"/>
+        <parameter name="engine" value="presto"/>
+        <classes>
+            <class name = "com.treasuredata.tdautomation.pluginautomation.td2td.Td2tdOutputBasic"/>
+        </classes>
+    </test>
+
+</suite>

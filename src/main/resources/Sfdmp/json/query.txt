@@ -1,1 +1,0 @@
-select krux_user_id, publisher_user_id, segment_list from krux

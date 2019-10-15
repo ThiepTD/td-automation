@@ -1,0 +1,24 @@
+url,id,external_id,via,created_at,updated_at,type,subject,raw_subject,description,priority,status,recipient,requester_id,submitter_id,assignee_id,organization_id,group_id,collaborator_ids,follower_ids,email_cc_ids,forum_topic_id,forum_topic_id,problem_id,has_incidents,is_public,due_at,tags,custom_fields,satisfaction_rating,sharing_agreement_ids,fields,followup_ids,ticket_form_id,brand_id,satisfaction_probability,allow_channelback,allow_attachments,generated_timestamp
+https://treasuredata.zendesk.com/api/v2/tickets/38444.json,38444,,"{""source"":{""from"":{},""rel"":""web_widget"",""to"":{}},""channel"":""web""}",31:53.0,01:48.0,,"hi,
+I have basicly question.
+
+1.Can I exe query b...","hi,
+I have basicly question.
+
+1.Can I exe query b...","hi,
+I have basicly question.
+
+1.Can I exe query between database on TD?
+
+like aaa database and bbb database inner join.
+
+TD内の異なるデータベースで、データをjoinさせることは可能ですか？
+
+2.Can I exe query that move table to other database?
+
+like move aaa.action table to bbb.action2 table.
+
+TD内で異なるデータベースからバッチ処理で別のデータベースのテーブルへ移動することは可能ですか？
+
+------------------
+送信元: https://console.treasuredata.com/app/queries/editor",,pending,,3.6539E+11,3.6539E+11,1098710047,3.60086E+11,25879637,[],[],[],,,,0,1,,"[""datacenter_aws"",""web_widget""]","[{""value"":null,""id"":80429327},{""value"":null,""id"":81568788},{""value"":null,""id"":77496087},{""value"":null,""id"":81568808},{""value"":null,""id"":77984587},{""value"":""1175"",""id"":360000277327},{""value"":""1175"",""id"":360000277347},{""value"":null,""id"":360000448128},{""value"":null,""id"":360000047248},{""value"":false,""id"":26703268},{""value"":null,""id"":32334037},{""value"":null,""id"":27013087}]","{""score"":""unoffered""}",[],"[{""value"":null,""id"":80429327},{""value"":null,""id"":81568788},{""value"":null,""id"":77496087},{""value"":null,""id"":81568808},{""value"":null,""id"":77984587},{""value"":""1175"",""id"":360000277327},{""value"":""1175"",""id"":360000277347},{""value"":null,""id"":360000448128},{""value"":null,""id"":360000047248},{""value"":false,""id"":26703268},{""value"":null,""id"":32334037},{""value"":null,""id"":27013087}]",[],166578,381217,,0,1,1556672508

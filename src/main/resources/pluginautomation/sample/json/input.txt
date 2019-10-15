@@ -1,0 +1,7 @@
+input = {
+  "num_of_row": 10,
+  "delimiter": ",",
+  "num_of_column": 4,
+  "headers": ["id", "name", "email", "age", "time"],
+  "column_types": ["id", "name", "email", "number,1,100", "time"]
+}
