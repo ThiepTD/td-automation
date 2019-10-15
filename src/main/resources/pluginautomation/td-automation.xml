@@ -3,7 +3,7 @@
     <parameter name="env" value="dev"/>
     <suite-files>
         <suite-file path="sfdc/sfdc.xml"></suite-file>
-        <suite-file path="onedrive/onedrive.xml"></suite-file>
+        <!--suite-file path="onedrive/onedrive.xml"></suite-file-->
         <suite-file path="td2td/td2td.xml"></suite-file>
     </suite-files>
 </suite>
