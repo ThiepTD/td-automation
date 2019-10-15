@@ -12,7 +12,7 @@ jobs:
       - checkout
       - run: echo "Hello World"
       - run: env
-      - run: echo "This step is to install td tli" # curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-bionic-td-agent3.sh | sh 
+      - run: curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-bionic-td-agent3.sh | sh 
       - restore_cache: # restore the saved cache after the first run or if `pom.xml` has changed
           # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
           key: /src/main-{{ checksum "pom.xml" }}
