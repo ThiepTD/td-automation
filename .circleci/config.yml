@@ -13,12 +13,12 @@ jobs:
       - run: curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-bionic-td-agent3.sh | sh 
       - restore_cache: # restore the saved cache after the first run or if `pom.xml` has changed
           # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
-          key: { checksum "pom.xml" }
+          key: checksum "pom.xml"
       
       - run: mvn dependency:go-offline # gets the project dependencies
       
       - save_cache: # saves the project dependencies
           paths:
             - ~/.m2
-          key: { checksum "pom.xml" }
+          key: checksum "pom.xml"
       - run: mvn clean test -Dtest=com.treasuredata.tdautomation.pluginautomation.TdExecutorTest#dev
