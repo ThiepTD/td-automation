@@ -2,10 +2,6 @@ version: 2.0
 orbs:
   maven: circleci/maven@0.0.10
 jobs:
-  hold:
-    type: approval
-    steps:
-      - run: echo "Hold on strigger ci job automatically"
   build:
     requires:
       - hold
@@ -28,3 +24,13 @@ jobs:
             - ~/.m2
           key: checksum "pom.xml"
       - run: mvn clean test -Dtest=com.treasuredata.tdautomation.pluginautomation.TdExecutorTest#dev
+workflows:
+  version: 2
+  build-test-and-approval-deploy:
+    jobs:
+      - build
+      - hold:
+          type: approval # requires that an in-app button be clicked by an appropriate member of the project to continue.
+      - deploy:
+          requires:
+            - hold
