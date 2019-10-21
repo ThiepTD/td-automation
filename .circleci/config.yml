@@ -4,6 +4,8 @@ orbs:
 jobs:
   hold:
     type: approval
+    steps:
+      - run: echo "Hold on strigger ci job automatically"
   build:
     requires:
       - hold
