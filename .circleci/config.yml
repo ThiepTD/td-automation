@@ -30,6 +30,8 @@ workflows:
     jobs:
       - hold:
           type: approval # requires that an in-app button be clicked by an appropriate member of the project to continue.
+          steps:
+            - run: echo "Asking for manual build"
       - build:
           requires:
             - hold
