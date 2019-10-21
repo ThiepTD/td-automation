@@ -28,9 +28,8 @@ workflows:
   version: 2
   build-test-and-approval-deploy:
     jobs:
-      - build
       - hold:
           type: approval # requires that an in-app button be clicked by an appropriate member of the project to continue.
-      - deploy:
+      - build:
           requires:
             - hold
