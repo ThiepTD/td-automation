@@ -2,7 +2,11 @@ version: 2.0
 orbs:
   maven: circleci/maven@0.0.10
 jobs:
+  hold:
+    type: approval
   build:
+    requires:
+      - hold
     docker: # run the steps with Docker
       - image: circleci/openjdk:8-jdk-stretch # ...with this image as the primary container; this is where all `steps` will run
     
