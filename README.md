@@ -1,3 +1,10 @@
+| Environment | STATUS |
+| ---- | ----------- |  
+| Development | [![CircleCI](https://circleci.com/gh/treasure-data/td-qa/tree/dev.svg?style=svg&circle-token=b3b46581e8a6ebb86e4d7d2b03e85dc70bd779fb)](https://circleci.com/gh/treasure-data/workflows/td-qa/tree/dev) |
+| Development EU01 | NA |  
+| Staging | [![CircleCI](https://circleci.com/gh/treasure-data/td-qa/tree/staging.svg?style=svg&circle-token=b3b46581e8a6ebb86e4d7d2b03e85dc70bd779fb)](https://circleci.com/gh/treasure-data/workflows/td-qa/tree/staging) |
+| Production | [![CircleCI](https://circleci.com/gh/treasure-data/td-qa/tree/master.svg?style=svg&circle-token=b3b46581e8a6ebb86e4d7d2b03e85dc70bd779fb)](https://circleci.com/gh/treasure-data/td-qa/tree/master) |
+
 # td-automation
 This is an automation framework for our QA team to support plugin automation testing. It supports:
  - API testing using Rest Assured
